@@ -1,0 +1,171 @@
+/* Google Fonts - debe ir antes de Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos exactos del HTML original */
+:root {
+  /* Tema oscuro (default) */
+  --color-dark: #0a0a0a;
+  --color-dark-lighter: #1a1a1a;
+  --color-dark-card: #111111;
+  --color-accent: #00ff88;      /* verde brillante accesible en fondo oscuro */
+  --color-accent-dark: #00cc6a; /* hover en oscuro */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  /* Base claro */
+  --color-light: #ffffff;
+  --color-light-lighter: #f8fafc;
+  --color-light-card: #ffffff;
+}
+
+/* Tema claro: acento más oscuro para contraste sobre blanco */
+[data-theme="light"] {
+  --color-dark: #ffffff;
+  --color-dark-lighter: #f8fafc;
+  --color-dark-card: #ffffff;
+
+  --color-text-primary: #0b0b0c;
+  --color-text-secondary: #374151; /* más legible en claro */
+  --color-text-muted: #6b7280;
+
+  /* Verde accesible (AA 4.5:1+) sobre blanco */
+  --color-accent: #166534;      /* green-800 */
+  --color-accent-dark: #14532d; /* hover más oscuro */
+}
+
+/* Transición de tema */
+* { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #00ff88; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00cc6a; }
+[data-theme="light"] ::-webkit-scrollbar-track { background: #eef2f7; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: var(--color-accent); }
+
+/* Parallax */
+html { scroll-behavior: smooth; }
+.parallax-bg {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+
+[data-theme="light"] .parallax-bg {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(17,17,17,.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.1);
+}
+[data-theme="light"] .glass {
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+}
+
+/* Hover lift */
+.hover-lift { transition: all .3s cubic-bezier(.4,0,.2,1); }
+.hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,255,136,.2); }
+[data-theme="light"] .hover-lift:hover { box-shadow: 0 20px 40px rgba(22,101,52,.18); }
+
+/* Partículas - Optimizado para 60fps */
+.particle { 
+  position: absolute; 
+  background: var(--color-accent); 
+  border-radius: 50%; 
+  pointer-events: none; 
+  animation: particle-float 8s linear infinite;
+  /* Optimizaciones de rendimiento */
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0); /* Forzar aceleración por hardware */
+  backface-visibility: hidden;
+  /* Mejoras visuales para efecto "burbujas de refresco" */
+  box-shadow: 
+    0 0 4px rgba(var(--color-accent-rgb, 0, 255, 136), 0.3),
+    0 0 8px rgba(var(--color-accent-rgb, 0, 255, 136), 0.1);
+  /* Gradiente sutil para simular volumen */
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(var(--color-accent-rgb, 0, 255, 136), 0.9), 
+    var(--color-accent)
+  );
+}
+
+/* Animación optimizada con aceleración por hardware */
+@keyframes particle-float {
+  0% { 
+    transform: translate3d(0, 100vh, 0) rotate(0deg) scale(0.8); 
+    opacity: 0; 
+  }
+  5% { 
+    opacity: 0.3;
+    transform: translate3d(0, 95vh, 0) rotate(18deg) scale(0.9); 
+  }
+  10% { 
+    opacity: 1;
+    transform: translate3d(0, 90vh, 0) rotate(36deg) scale(1); 
+  }
+  90% { 
+    opacity: 1;
+    transform: translate3d(0, -90vh, 0) rotate(324deg) scale(1); 
+  }
+  95% {
+    opacity: 0.3;
+    transform: translate3d(0, -95vh, 0) rotate(342deg) scale(0.9);
+  }
+  100% { 
+    transform: translate3d(0, -100vh, 0) rotate(360deg) scale(0.8); 
+    opacity: 0; 
+  }
+}
+
+/* Variables CSS adicionales para colores RGB */
+:root {
+  --color-accent-rgb: 0, 255, 136;
+}
+
+[data-theme="light"] {
+  --color-accent-rgb: 22, 101, 52;
+}
+
+/* Barra de progreso */
+.progress-bar { width: 0%; transition: width 2s ease-in-out; }
+
+/* Animación de escritura */
+.typing-text::after { content: '|'; animation: blink 1s infinite; color: var(--color-accent); }
+@keyframes blink { 0%,50%{opacity:1}51%,100%{opacity:0} }
+
+/* Navegación: hover en claro */
+[data-theme="light"] .nav-link:hover { background: rgba(0,0,0,.05); }
+[data-theme="light"] .nav-link.active { background: rgba(0,0,0,.08); }
+
+/* Accesibilidad: texto en superficies accent en claro (el acento es oscuro) */
+[data-theme="light"] .bg-accent,
+[data-theme="light"] .bg-accent * {
+  color: #ffffff !important;
+}
+/* También si se usa bg-[color]-gradient principal */
+[data-theme="light"] .from-accent.to-accent-dark,
+[data-theme="light"] .from-accent.to-accent-dark * {
+  color: #ffffff;
+}
+
+/* Clase especial para sidebar móvil */
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.active {
+  transform: translateX(0);
+}
