@@ -1,8 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, inject, AfterViewInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, inject, AfterViewInit, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Services
 import { PortfolioService } from './services/portfolio.service';
+import { TranslationService } from './services/translation.service';
 
 // Components  
 import { ResumeComponent } from './components/resume.component';
@@ -10,6 +11,7 @@ import { ProjectsComponent } from './components/projects.component';
 import { BlogComponent } from './components/blog.component';
 import { ContactComponent } from './components/contact.component';
 import { ParticlesComponent } from './components/particles.component';
+import { LanguageToggleComponent } from './components/language-toggle.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,8 @@ import { ParticlesComponent } from './components/particles.component';
     ProjectsComponent,
     BlogComponent,
     ContactComponent,
-    ParticlesComponent
+    ParticlesComponent,
+    LanguageToggleComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
@@ -28,6 +31,7 @@ import { ParticlesComponent } from './components/particles.component';
 })
 export class App implements OnInit, AfterViewInit, OnDestroy {
   private portfolioService = inject(PortfolioService);
+  private translationService = inject(TranslationService);
   
   // Expose service signals to template
   currentTheme = this.portfolioService.currentTheme;
@@ -35,9 +39,13 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   scrollProgress = this.portfolioService.scrollProgress;
   activeSection = this.portfolioService.activeSection;
   typingText = this.portfolioService.typingText;
+  
+  // Translation signals
+  t = computed(() => this.translationService.translations());
+  currentLanguage = this.translationService.currentLanguage;
 
   ngOnInit() {
-    // Component initialization
+    // Component initialization - translations are auto-initialized
   }
 
   ngAfterViewInit() {

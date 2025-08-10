@@ -36,7 +36,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
             </div>
             <div>
               <h4 class="font-semibold mb-1">Email</h4>
-              <a href="mailto:ignacio@example.com" class="text-text-secondary hover:text-accent transition-colors">ignacio&#64;example.com</a>
+              <a href="mailto:ignacionavarretedev@gmail.com" class="text-text-secondary hover:text-accent transition-colors">ignacionavarretedev&#64;gmail.com</a>
             </div>
           </div>
           <div class="flex items-center group">
@@ -62,16 +62,16 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
         <div class="mt-12">
           <h4 class="font-semibold mb-6">Redes</h4>
           <div class="flex space-x-4">
-            <a href="#" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="github" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
-              <i data-lucide="twitter" class="w-5 h-5"></i>
+            <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+              <i data-lucide="x" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a href="https://instagram.com/ignacionavarrete" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
           </div>

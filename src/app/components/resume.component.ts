@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
           <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mr-6">
             <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-3xl font-bold">Experience</h3>
+          <h3 class="text-3xl font-bold">Experiencia</h3>
         </div>
 
         <div class="space-y-8">
@@ -87,7 +87,7 @@ import { CommonModule } from '@angular/common';
           <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mr-6">
             <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-3xl font-bold">Education</h3>
+          <h3 class="text-3xl font-bold">Educación</h3>
         </div>
 
         <div class="space-y-8">
@@ -121,7 +121,7 @@ import { CommonModule } from '@angular/common';
     <!-- Skills -->
     <div class="mt-24">
       <h3 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
-        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Technical Skills</span>
+        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Habilidades Técnicas</span>
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @for (skill of skills(); track skill.name) {
@@ -153,10 +153,10 @@ export class ResumeComponent implements OnInit, AfterViewInit {
   skills = signal([
     { name: 'Angular', percentage: 95, delay: 100 },
     { name: 'TypeScript', percentage: 92, delay: 200 },
-    { name: 'NgRx & RxJS', percentage: 90, delay: 300 },
-    { name: 'NestJS', percentage: 85, delay: 400 },
-    { name: 'Tailwind CSS', percentage: 88, delay: 500 },
-    { name: 'Node.js', percentage: 82, delay: 600 }
+    { name: 'JavaScript', percentage: 90, delay: 300 },
+    { name: 'NgRx & RxJS', percentage: 88, delay: 400 },
+    { name: 'Node.js', percentage: 85, delay: 500 },
+    { name: 'MySQL', percentage: 80, delay: 600 }
   ]);
   
   ngOnInit() {

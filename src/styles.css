@@ -80,63 +80,19 @@ html { scroll-behavior: smooth; }
 .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,255,136,.2); }
 [data-theme="light"] .hover-lift:hover { box-shadow: 0 20px 40px rgba(22,101,52,.18); }
 
-/* Partículas - Optimizado para 60fps */
+/* Partículas - Exacto del HTML original */
 .particle { 
   position: absolute; 
   background: var(--color-accent); 
   border-radius: 50%; 
   pointer-events: none; 
-  animation: particle-float 8s linear infinite;
-  /* Optimizaciones de rendimiento */
-  will-change: transform, opacity;
-  transform: translate3d(0, 0, 0); /* Forzar aceleración por hardware */
-  backface-visibility: hidden;
-  /* Mejoras visuales para efecto "burbujas de refresco" */
-  box-shadow: 
-    0 0 4px rgba(var(--color-accent-rgb, 0, 255, 136), 0.3),
-    0 0 8px rgba(var(--color-accent-rgb, 0, 255, 136), 0.1);
-  /* Gradiente sutil para simular volumen */
-  background: radial-gradient(circle at 30% 30%, 
-    rgba(var(--color-accent-rgb, 0, 255, 136), 0.9), 
-    var(--color-accent)
-  );
+  animation: particle-float 8s linear infinite; 
 }
-
-/* Animación optimizada con aceleración por hardware */
 @keyframes particle-float {
-  0% { 
-    transform: translate3d(0, 100vh, 0) rotate(0deg) scale(0.8); 
-    opacity: 0; 
-  }
-  5% { 
-    opacity: 0.3;
-    transform: translate3d(0, 95vh, 0) rotate(18deg) scale(0.9); 
-  }
-  10% { 
-    opacity: 1;
-    transform: translate3d(0, 90vh, 0) rotate(36deg) scale(1); 
-  }
-  90% { 
-    opacity: 1;
-    transform: translate3d(0, -90vh, 0) rotate(324deg) scale(1); 
-  }
-  95% {
-    opacity: 0.3;
-    transform: translate3d(0, -95vh, 0) rotate(342deg) scale(0.9);
-  }
-  100% { 
-    transform: translate3d(0, -100vh, 0) rotate(360deg) scale(0.8); 
-    opacity: 0; 
-  }
-}
-
-/* Variables CSS adicionales para colores RGB */
-:root {
-  --color-accent-rgb: 0, 255, 136;
-}
-
-[data-theme="light"] {
-  --color-accent-rgb: 22, 101, 52;
+  0% { transform: translateY(100vh) rotate(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
 
 /* Barra de progreso */

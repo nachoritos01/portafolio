@@ -12,7 +12,7 @@
 
   <!-- CTA flotante -->
   <a href="#contact" class="fixed bottom-8 right-8 z-40 bg-accent hover:bg-accent-dark px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-    <i data-lucide="briefcase" class="w-5 h-5 inline mr-2"></i> Contrátame
+    <i data-lucide="briefcase" class="w-5 h-5 inline mr-2"></i> {{ t().common.hireMe }}
   </a>
 
   <!-- Progreso scroll -->
@@ -44,37 +44,43 @@
       <!-- Navegación -->
       <nav class="w-full mb-8" data-aos="fade-up" data-aos-delay="200">
         <ul class="space-y-2">
-          <li><a (click)="navigateToSection('about')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'about' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="user" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">ABOUT</span></a></li>
-          <li><a (click)="navigateToSection('resume')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'resume' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="file-text" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">RESUME</span></a></li>
-          <li><a (click)="navigateToSection('projects')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'projects' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="folder" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">PROJECTS</span></a></li>
-          <li><a (click)="navigateToSection('blog')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'blog' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="newspaper" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">ARTICLES</span></a></li>
-          <li><a (click)="navigateToSection('contact')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'contact' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="mail" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">CONTACT</span></a></li>
+          <li><a (click)="navigateToSection('about')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'about' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="user" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.about }}</span></a></li>
+          <li><a (click)="navigateToSection('resume')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'resume' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="file-text" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.resume }}</span></a></li>
+          <li><a (click)="navigateToSection('projects')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'projects' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="folder" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.projects }}</span></a></li>
+          <li><a (click)="navigateToSection('blog')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'blog' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="newspaper" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.articles }}</span></a></li>
+          <li><a (click)="navigateToSection('contact')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'contact' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="mail" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.contact }}</span></a></li>
         </ul>
       </nav>
 
       <!-- Social -->
       <div class="flex space-x-4 mb-8" data-aos="fade-up" data-aos-delay="300">
-        <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
-        <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-        <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
+        <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="x" class="w-5 h-5"></i></a>
+        <a href="https://instagram.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
       </div>
 
       <!-- Acciones -->
       <div class="space-y-3 w-full" data-aos="fade-up" data-aos-delay="400">
         <a (click)="navigateToSection('contact')" class="w-full bg-accent hover:bg-accent-dark py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
-          <i data-lucide="phone" class="w-5 h-5 mr-2"></i> CONTACT ME
+          <i data-lucide="phone" class="w-5 h-5 mr-2"></i> {{ t().common.contactMe }}
         </a>
-        <a href="/resume.pdf" download class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
-          <i data-lucide="download" class="w-5 h-5 mr-2"></i> DOWNLOAD CV
+        <a href="/cv.pdf" download="Ignacio_Navarrete_Dzul_CV_2025.pdf" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
+          <i data-lucide="download" class="w-5 h-5 mr-2"></i> {{ t().common.downloadCV }}
         </a>
       </div>
 
-      <!-- Theme toggle -->
-      <div class="mt-auto" data-aos="fade-up" data-aos-delay="500">
-        <button id="theme-toggle" (click)="toggleTheme()" class="p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-white/5 transition-all duration-300" aria-label="Cambiar tema">
-          <i [attr.data-lucide]="currentTheme() === 'dark' ? 'sun' : 'moon'" class="w-6 h-6"></i>
-        </button>
+      <!-- Controls -->
+      <div class="mt-auto space-y-4" data-aos="fade-up" data-aos-delay="500">
+        <!-- Language toggle -->
+        <app-language-toggle></app-language-toggle>
+        
+        <!-- Theme toggle -->
+        <div class="flex justify-center">
+          <button id="theme-toggle" (click)="toggleTheme()" class="p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-white/5 transition-all duration-300" aria-label="Cambiar tema">
+            <i [attr.data-lucide]="currentTheme() === 'dark' ? 'sun' : 'moon'" class="w-6 h-6"></i>
+          </button>
+        </div>
       </div>
     </aside>
 
@@ -90,7 +96,7 @@
                 <span class="text-accent">Ignacio</span>
               </h2>
               <p class="text-xl lg:text-2xl text-text-secondary mb-8 leading-relaxed">
-                Desarrollador Frontend Senior con más de <span class="text-accent font-semibold">8 años</span> de experiencia, especializado en <span class="text-accent font-semibold">Angular</span> y <span class="text-accent font-semibold">TypeScript</span>, creando interfaces modernas y escalables.
+                Desarrollador Frontend Senior con más de <span class="text-accent font-semibold">3 años</span> de experiencia, especializado en <span class="text-accent font-semibold">Angular</span> y <span class="text-accent font-semibold">TypeScript</span>, creando interfaces modernas y escalables para empresas como Procetti y Neoris.
               </p>
               <div class="flex flex-wrap gap-4 mb-8">
                 <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">Angular</span>
@@ -98,6 +104,8 @@
                 <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">NgRx</span>
                 <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">RxJS</span>
                 <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">NestJS</span>
+                <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">Node.js</span>
+                <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">MySQL</span>
               </div>
               <div class="flex flex-col sm:flex-row gap-4">
                 <a (click)="navigateToSection('projects')" class="bg-accent hover:bg-accent-dark px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
