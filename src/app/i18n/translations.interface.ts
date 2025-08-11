@@ -40,6 +40,38 @@ export interface Translations {
       neoris: string;
       nova: string;
     };
+    jobs: {
+      procetti: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+      neoris: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+      nova: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+      relappro: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+      simetrical: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+      efisense: {
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
+    };
     education: {
       degree1: string;
       degree2: string;

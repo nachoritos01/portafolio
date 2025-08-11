@@ -39,6 +39,56 @@ export const en: Translations = {
       neoris: 'Rich UI with Angular Material and Tailwind; NgRx and advanced reactive patterns.',
       nova: 'Bursanet migration from AngularJS to Angular 12, modernization and stability.'
     },
+    jobs: {
+      procetti: {
+        timePeriod: 'Aug 2024 - Present',
+        title: 'Sr. Frontend Developer',
+        descriptions: [
+          'Architecture reorganization, Angular 17→19 migration, NgRx Signals/RxJS',
+          'Lazy loading and bundle optimization for better performance',
+          'Implementation of advanced reactive patterns'
+        ]
+      },
+      neoris: {
+        timePeriod: 'Apr 2022 - Mar 2024',
+        title: 'Sr. Frontend Developer',
+        descriptions: [
+          'Rich UI with Angular Material and Tailwind CSS',
+          'NgRx and advanced reactive patterns for state management'
+        ]
+      },
+      nova: {
+        timePeriod: 'Nov 2021 - Apr 2022',
+        title: 'Sr. Frontend Developer',
+        descriptions: [
+          'Bursanet migration from AngularJS to Angular 12',
+          'Modernization and application stabilization'
+        ]
+      },
+      relappro: {
+        timePeriod: 'Jul 2019 - Nov 2021',
+        title: 'Full Stack Developer',
+        descriptions: [
+          'Web application development with Angular and Node.js'
+        ]
+      },
+      simetrical: {
+        timePeriod: 'Jan 2018 - Jul 2019',
+        title: 'Backend Developer',
+        descriptions: [
+          'REST API development with Symfony framework',
+          'Database management and backend architecture'
+        ]
+      },
+      efisense: {
+        timePeriod: 'Mar 2016 - Dec 2017',
+        title: 'Web Developer',
+        descriptions: [
+          'Web development with PHP and CodeIgniter framework',
+          'MVC architecture implementation and MySQL databases'
+        ]
+      }
+    },
     education: {
       degree1: 'Associate Degree in Multimedia and E-Commerce',
       degree2: 'Associate Degree in Graphic Arts',

@@ -39,6 +39,56 @@ export const es: Translations = {
       neoris: 'UI ricas con Angular Material y Tailwind; NgRx y patrones reactivos avanzados.',
       nova: 'Migración Bursanet de AngularJS a Angular 12, modernización y estabilidad.'
     },
+    jobs: {
+      procetti: {
+        timePeriod: 'Ago 2024 - Actualidad',
+        title: 'Desarrollador Sr. Frontend',
+        descriptions: [
+          'Reorganización de arquitectura, migración Angular 17→19, NgRx Signals/RxJS',
+          'Lazy loading y optimización de bundles para mejor rendimiento',
+          'Implementación de patrones reactivos avanzados'
+        ]
+      },
+      neoris: {
+        timePeriod: 'Abr 2022 - Mar 2024',
+        title: 'Desarrollador Sr. Frontend',
+        descriptions: [
+          'UI ricas con Angular Material y Tailwind CSS',
+          'NgRx y patrones reactivos avanzados para gestión de estado'
+        ]
+      },
+      nova: {
+        timePeriod: 'Nov 2021 - Abr 2022',
+        title: 'Desarrollador Sr. Frontend',
+        descriptions: [
+          'Migración Bursanet de AngularJS a Angular 12',
+          'Modernización y estabilización de la aplicación'
+        ]
+      },
+      relappro: {
+        timePeriod: 'Jul 2019 - Nov 2021',
+        title: 'Desarrollador Full Stack',
+        descriptions: [
+          'Desarrollo de aplicaciones web con Angular y Node.js'
+        ]
+      },
+      simetrical: {
+        timePeriod: 'Ene 2018 - Jul 2019',
+        title: 'Desarrollador Backend',
+        descriptions: [
+          'Desarrollo de APIs REST con Symfony framework',
+          'Gestión de bases de datos y arquitectura backend'
+        ]
+      },
+      efisense: {
+        timePeriod: 'Mar 2016 - Dic 2017',
+        title: 'Desarrollador Web',
+        descriptions: [
+          'Desarrollo web con PHP y CodeIgniter framework',
+          'Implementación de arquitectura MVC y bases de datos MySQL'
+        ]
+      }
+    },
     education: {
       degree1: 'TSU en Multimedia y Comercio Electrónico',
       degree2: 'TSU en Artes Gráficas',
