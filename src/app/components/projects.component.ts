@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 <section id="projects" class="min-h-screen p-8 lg:p-16">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
-      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Proyectos</span>
+      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().projects.title }}</span>
     </h2>
 
     <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
@@ -61,53 +62,61 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class ProjectsComponent {
+  private translationService = inject(TranslationService);
+  
+  // Translation getter
+  t = () => this.translationService.t;
+  
   activeFilter = signal<string>('all');
   
-  filters = signal([
-    { value: 'all', label: 'Todos' },
-    { value: 'web', label: 'Web Apps' },
-    { value: 'mobile', label: 'Mobile' },
-    { value: 'data', label: 'Data' }
+  filters = computed(() => [
+    { value: 'all', label: this.t().projects.filters.all },
+    { value: 'web', label: this.t().projects.filters.web },
+    { value: 'mobile', label: this.t().projects.filters.mobile },
+    { value: 'data', label: this.t().projects.filters.data }
   ]);
 
-  projects = signal([
-    {
-      id: 1,
-      title: 'Twilio WhatsApp Assistant',
-      description: 'Asistente conversacional integrando Twilio WhatsApp Business API y Google Calendar con arquitectura serverless.',
-      image: '/placeholder.svg?height=250&width=400',
-      technologies: ['NestJS', 'Twilio API', 'Google Calendar'],
-      category: 'Integración de APIs',
-      type: 'web',
-      liveUrl: '#',
-      githubUrl: '#',
-      delay: 100
-    },
-    {
-      id: 2,
-      title: 'Sistema SIGADE - Telcel',
-      description: 'Gestión de garantías con Angular y NgRx, optimización de estado y rendimiento.',
-      image: '/placeholder.svg?height=250&width=400',
-      technologies: ['Angular', 'NgRx', 'TypeScript'],
-      category: 'Sistema Empresarial',
-      type: 'web',
-      liveUrl: '#',
-      githubUrl: '#',
-      delay: 200
-    },
-    {
-      id: 3,
-      title: 'AI Analytics Platform',
-      description: 'Plataforma de analítica con ML para BI y predicciones.',
-      image: '/placeholder.svg?height=250&width=400',
-      technologies: ['Python', 'TensorFlow', 'PostgreSQL'],
-      category: 'Data Science',
-      type: 'data',
-      liveUrl: '#',
-      githubUrl: '#',
-      delay: 300
-    }
-  ]);
+  projects = computed(() => {
+    const translatedProjects = this.t().projects.list;
+    return [
+      {
+        id: 1,
+        title: translatedProjects[0].title,
+        description: translatedProjects[0].description,
+        image: '/placeholder.svg?height=250&width=400',
+        technologies: ['NestJS', 'Twilio API', 'Google Calendar'],
+        category: translatedProjects[0].category,
+        type: 'web',
+        liveUrl: '#',
+        githubUrl: '#',
+        delay: 100
+      },
+      {
+        id: 2,
+        title: translatedProjects[1].title,
+        description: translatedProjects[1].description,
+        image: '/placeholder.svg?height=250&width=400',
+        technologies: ['Angular', 'NgRx', 'TypeScript'],
+        category: translatedProjects[1].category,
+        type: 'web',
+        liveUrl: '#',
+        githubUrl: '#',
+        delay: 200
+      },
+      {
+        id: 3,
+        title: translatedProjects[2].title,
+        description: translatedProjects[2].description,
+        image: '/placeholder.svg?height=250&width=400',
+        technologies: ['Python', 'TensorFlow', 'PostgreSQL'],
+        category: translatedProjects[2].category,
+        type: 'data',
+        liveUrl: '#',
+        githubUrl: '#',
+        delay: 300
+      }
+    ];
+  });
 
   filteredProjects = computed(() => {
     if (this.activeFilter() === 'all') {

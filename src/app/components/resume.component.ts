@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit, AfterViewInit, ElementRef, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-resume',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 <section id="resume" class="min-h-screen p-8 lg:p-16 bg-dark-lighter/50">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
-      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Experiencia</span>
+      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().resume.title }}</span>
     </h2>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -21,7 +22,7 @@ import { CommonModule } from '@angular/common';
           <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mr-6">
             <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-3xl font-bold">Experiencia</h3>
+          <h3 class="text-3xl font-bold">{{ t().resume.experience }}</h3>
         </div>
 
         <div class="space-y-8">
@@ -32,9 +33,9 @@ import { CommonModule } from '@angular/common';
                 <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">Ago 2024 - Actualidad</span>
                 <img src="/placeholder.svg?height=24&width=60" alt="Procetti" class="h-6 opacity-70"/>
               </div>
-              <h4 class="text-xl font-bold mb-2">Desarrollador Sr. Frontend</h4>
-              <p class="text-accent text-sm mb-4">Procetti | Remoto, México</p>
-              <p class="text-text-secondary leading-relaxed mb-4">Reorganización de arquitectura, migración Angular 17→19, NgRx Signals/RxJS, lazy loading y optimización de bundles.</p>
+              <h4 class="text-xl font-bold mb-2">{{ t().resume.positions.seniorFrontend }}</h4>
+              <p class="text-accent text-sm mb-4">{{ t().resume.companies.procetti }}</p>
+              <p class="text-text-secondary leading-relaxed mb-4">{{ t().resume.descriptions.procetti }}</p>
               <div class="flex flex-wrap gap-2">
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Angular 19</span>
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">NgRx Signals</span>
@@ -50,9 +51,9 @@ import { CommonModule } from '@angular/common';
                 <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">Abr 2022 - Mar 2024</span>
                 <img src="/placeholder.svg?height=24&width=60" alt="Neoris" class="h-6 opacity-70"/>
               </div>
-              <h4 class="text-xl font-bold mb-2">Desarrollador Sr. Frontend</h4>
-              <p class="text-accent text-sm mb-4">Neoris | México</p>
-              <p class="text-text-secondary leading-relaxed mb-4">UI ricas con Angular Material y Tailwind; NgRx y patrones reactivos avanzados.</p>
+              <h4 class="text-xl font-bold mb-2">{{ t().resume.positions.seniorFrontend }}</h4>
+              <p class="text-accent text-sm mb-4">{{ t().resume.companies.neoris }}</p>
+              <p class="text-text-secondary leading-relaxed mb-4">{{ t().resume.descriptions.neoris }}</p>
               <div class="flex flex-wrap gap-2">
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Angular Material</span>
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Tailwind CSS</span>
@@ -68,9 +69,9 @@ import { CommonModule } from '@angular/common';
                 <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">Nov 2021 - Abr 2022</span>
                 <img src="/placeholder.svg?height=24&width=60" alt="Nova Solutions Systems" class="h-6 opacity-70"/>
               </div>
-              <h4 class="text-xl font-bold mb-2">Desarrollador Sr. Frontend</h4>
-              <p class="text-accent text-sm mb-4">Nova Solutions Systems | México</p>
-              <p class="text-text-secondary leading-relaxed mb-4">Migración Bursanet de AngularJS a Angular 12, modernización y estabilidad.</p>
+              <h4 class="text-xl font-bold mb-2">{{ t().resume.positions.seniorFrontend }}</h4>
+              <p class="text-accent text-sm mb-4">{{ t().resume.companies.nova }}</p>
+              <p class="text-text-secondary leading-relaxed mb-4">{{ t().resume.descriptions.nova }}</p>
               <div class="flex flex-wrap gap-2">
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Angular 12</span>
                 <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Migration</span>
@@ -87,7 +88,7 @@ import { CommonModule } from '@angular/common';
           <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mr-6">
             <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-3xl font-bold">Educación</h3>
+          <h3 class="text-3xl font-bold">{{ t().resume.education }}</h3>
         </div>
 
         <div class="space-y-8">
@@ -95,11 +96,11 @@ import { CommonModule } from '@angular/common';
             <div class="absolute -left-3 top-0 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
             <div class="glass rounded-2xl p-6">
               <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">2011 - 2013</span>
-              <h4 class="text-xl font-bold mt-4 mb-2">TSU en Multimedia y Comercio Electrónico</h4>
-              <p class="text-accent text-sm mb-2">Universidad Tecnológica Metropolitana</p>
+              <h4 class="text-xl font-bold mt-4 mb-2">{{ t().resume.education.degree1 }}</h4>
+              <p class="text-accent text-sm mb-2">{{ t().resume.education.university }}</p>
               <p class="text-text-muted text-sm mb-4">Cédula No.: 09179779</p>
-              <p class="text-text-secondary leading-relaxed mb-4">Especialización en multimedia y e-commerce, base del desarrollo web moderno.</p>
-              <div class="text-accent text-sm font-medium flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2"></i>Ver Certificado</div>
+              <p class="text-text-secondary leading-relaxed mb-4">{{ t().resume.education.description1 }}</p>
+              <div class="text-accent text-sm font-medium flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2"></i>{{ t().resume.education.certificate }}</div>
             </div>
           </div>
 
@@ -107,11 +108,11 @@ import { CommonModule } from '@angular/common';
             <div class="absolute -left-3 top-0 w-6 h-6 bg-text-muted rounded-full"></div>
             <div class="glass rounded-2xl p-6">
               <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">2008 - 2010</span>
-              <h4 class="text-xl font-bold mt-4 mb-2">TSU en Artes Gráficas</h4>
-              <p class="text-accent text-sm mb-2">Universidad Tecnológica Metropolitana</p>
+              <h4 class="text-xl font-bold mt-4 mb-2">{{ t().resume.education.degree2 }}</h4>
+              <p class="text-accent text-sm mb-2">{{ t().resume.education.university }}</p>
               <p class="text-text-muted text-sm mb-4">Cédula No.: 6997154</p>
-              <p class="text-text-secondary leading-relaxed mb-4">Fundamentos en diseño y comunicación visual aplicados al UI.</p>
-              <div class="text-accent text-sm font-medium flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2"></i>Ver Certificado</div>
+              <p class="text-text-secondary leading-relaxed mb-4">{{ t().resume.education.description2 }}</p>
+              <div class="text-accent text-sm font-medium flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2"></i>{{ t().resume.education.certificate }}</div>
             </div>
           </div>
         </div>
@@ -121,7 +122,7 @@ import { CommonModule } from '@angular/common';
     <!-- Skills -->
     <div class="mt-24">
       <h3 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
-        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Habilidades Técnicas</span>
+        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().resume.skills }}</span>
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @for (skill of skills(); track skill.name) {
@@ -145,6 +146,10 @@ import { CommonModule } from '@angular/common';
 })
 export class ResumeComponent implements OnInit, AfterViewInit {
   private elementRef = inject(ElementRef);
+  private translationService = inject(TranslationService);
+  
+  // Translation getter
+  t = () => this.translationService.t;
   
   // Animation state
   animateSkills = signal(false);

@@ -25,8 +25,29 @@ export interface Translations {
   resume: {
     title: string;
     experience: string;
-    education: string;
+    educationTitle: string;
     skills: string;
+    positions: {
+      seniorFrontend: string;
+    };
+    companies: {
+      procetti: string;
+      neoris: string;
+      nova: string;
+    };
+    descriptions: {
+      procetti: string;
+      neoris: string;
+      nova: string;
+    };
+    education: {
+      degree1: string;
+      degree2: string;
+      university: string;
+      certificate: string;
+      description1: string;
+      description2: string;
+    };
   };
 
   // Projects section
@@ -38,11 +59,33 @@ export interface Translations {
       mobile: string;
       data: string;
     };
+    list: Array<{
+      title: string;
+      description: string;
+      category: string;
+    }>;
   };
 
   // Blog section
   blog: {
     title: string;
+    readMore: string;
+    filters: {
+      all: string;
+      design: string;
+      code: string;
+      tech: string;
+    };
+    categories: {
+      design: string;
+      development: string;
+      technology: string;
+    };
+    articles: Array<{
+      title: string;
+      excerpt: string;
+      date: string;
+    }>;
   };
 
   // Contact section
@@ -63,6 +106,53 @@ export interface Translations {
     subject: string;
     message: string;
     send: string;
+  };
+
+  // Services section
+  services: {
+    title: string;
+    frontend: {
+      title: string;
+      description: string;
+    };
+    architecture: {
+      title: string;
+      description: string;
+    };
+    optimization: {
+      title: string;
+      description: string;
+    };
+    backend: {
+      title: string;
+      description: string;
+    };
+  };
+
+  // Profile/personal info
+  profile: {
+    location: string;
+    experience: string;
+    workMode: string;
+    locationValue: string;
+    experienceValue: string;
+    workModeValue: string;
+  };
+
+  // Footer section
+  footer: {
+    description: string;
+    links: string;
+    services: string;
+    webDev: string;
+    mobileApps: string;
+    dataScience: string;
+    consulting: string;
+    projectMgmt: string;
+    copyright: string;
+    privacy: string;
+    terms: string;
+    cookies: string;
   };
 
   // Common/shared translations

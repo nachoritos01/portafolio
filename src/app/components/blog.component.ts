@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-blog',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 <section id="blog" class="min-h-screen p-8 lg:p-16">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
-      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Artículos</span>
+      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().blog.title }}</span>
     </h2>
 
     <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
@@ -39,7 +40,7 @@ import { CommonModule } from '@angular/common';
             <h3 class="text-xl font-bold mb-3 mt-2 hover:text-accent transition-colors cursor-pointer">{{ article.title }}</h3>
             <p class="text-text-secondary leading-relaxed mb-4">{{ article.excerpt }}</p>
             <a [href]="article.url" class="text-accent font-medium hover:underline flex items-center">
-              Leer más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              {{ t().blog.readMore }} <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
             </a>
           </div>
         </article>
@@ -50,50 +51,59 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class BlogComponent {
+  private translationService = inject(TranslationService);
+  
+  // Translation getter
+  t = () => this.translationService.t;
+  
   activeFilter = signal<string>('all');
   
-  filters = signal([
-    { value: 'all', label: 'Todos' },
-    { value: 'design', label: 'Diseño' },
-    { value: 'code', label: 'Desarrollo' },
-    { value: 'tech', label: 'Tecnología' }
+  filters = computed(() => [
+    { value: 'all', label: this.t().blog.filters.all },
+    { value: 'design', label: this.t().blog.filters.design },
+    { value: 'code', label: this.t().blog.filters.code },
+    { value: 'tech', label: this.t().blog.filters.tech }
   ]);
 
-  articles = signal([
-    {
-      id: 1,
-      title: 'Brand Identity with Code',
-      excerpt: 'Representación digital de valores de marca a través de diseño y experiencias interactivas.',
-      image: '/placeholder.svg?height=250&width=400',
-      date: 'Abr 28, 2024',
-      category: 'design',
-      categoryLabel: 'Design',
-      url: '#',
-      delay: 100
-    },
-    {
-      id: 2,
-      title: 'Modern Data Infrastructure',
-      excerpt: 'Tendencias en arquitectura de datos, cloud y sistemas distribuidos.',
-      image: '/placeholder.svg?height=250&width=400',
-      date: 'Abr 25, 2024',
-      category: 'tech',
-      categoryLabel: 'Technology',
-      url: '#',
-      delay: 200
-    },
-    {
-      id: 3,
-      title: 'Advanced React Patterns',
-      excerpt: 'Patrones avanzados, hooks y rendimiento para apps escalables.',
-      image: '/placeholder.svg?height=250&width=400',
-      date: 'Abr 22, 2024',
-      category: 'code',
-      categoryLabel: 'Development',
-      url: '#',
-      delay: 300
-    }
-  ]);
+  articles = computed(() => {
+    const translatedArticles = this.t().blog.articles;
+    const categories = this.t().blog.categories;
+    return [
+      {
+        id: 1,
+        title: translatedArticles[0].title,
+        excerpt: translatedArticles[0].excerpt,
+        image: '/placeholder.svg?height=250&width=400',
+        date: translatedArticles[0].date,
+        category: 'design',
+        categoryLabel: categories.design,
+        url: '#',
+        delay: 100
+      },
+      {
+        id: 2,
+        title: translatedArticles[1].title,
+        excerpt: translatedArticles[1].excerpt,
+        image: '/placeholder.svg?height=250&width=400',
+        date: translatedArticles[1].date,
+        category: 'tech',
+        categoryLabel: categories.technology,
+        url: '#',
+        delay: 200
+      },
+      {
+        id: 3,
+        title: translatedArticles[2].title,
+        excerpt: translatedArticles[2].excerpt,
+        image: '/placeholder.svg?height=250&width=400',
+        date: translatedArticles[2].date,
+        category: 'code',
+        categoryLabel: categories.development,
+        url: '#',
+        delay: 300
+      }
+    ];
+  });
 
   filteredArticles = computed(() => {
     if (this.activeFilter() === 'all') {

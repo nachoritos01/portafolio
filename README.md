@@ -2,6 +2,10 @@
 
 **Portafolio personal profesional de Ignacio Navarrete** - Frontend Developer Senior especializado en Angular y TypeScript. Migrado exitosamente desde HTML estático a **Angular 20** con **Standalone Components**, **Signals**, **Sistema de Internacionalización** y **TailwindCSS**.
 
+## 🌐 Ver en Vivo
+
+**🚀 [Ver Portfolio en Vivo](https://portfolio-angular-rosy-seven.vercel.app/)**
+
 [![Angular](https://img.shields.io/badge/Angular-20-red?style=flat-square&logo=angular)](https://angular.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)

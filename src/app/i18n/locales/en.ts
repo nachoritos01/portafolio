@@ -24,8 +24,29 @@ export const en: Translations = {
   resume: {
     title: 'Experience',
     experience: 'Experience',
-    education: 'Education',
-    skills: 'Technical Skills'
+    educationTitle: 'Education',
+    skills: 'Technical Skills',
+    positions: {
+      seniorFrontend: 'Sr. Frontend Developer'
+    },
+    companies: {
+      procetti: 'Procetti | Remote, Mexico',
+      neoris: 'Neoris | Mexico',
+      nova: 'Nova Solutions Systems | Mexico'
+    },
+    descriptions: {
+      procetti: 'Architecture reorganization, Angular 17→19 migration, NgRx Signals/RxJS, lazy loading and bundle optimization.',
+      neoris: 'Rich UI with Angular Material and Tailwind; NgRx and advanced reactive patterns.',
+      nova: 'Bursanet migration from AngularJS to Angular 12, modernization and stability.'
+    },
+    education: {
+      degree1: 'Associate Degree in Multimedia and E-Commerce',
+      degree2: 'Associate Degree in Graphic Arts',
+      university: 'Universidad Tecnológica Metropolitana',
+      certificate: 'View Certificate',
+      description1: 'Specialization in multimedia and e-commerce, foundation of modern web development.',
+      description2: 'Fundamentals in design and visual communication applied to UI.'
+    }
   },
 
   projects: {
@@ -35,11 +56,57 @@ export const en: Translations = {
       web: 'Web Apps',
       mobile: 'Mobile',
       data: 'Data'
-    }
+    },
+    list: [
+      {
+        title: 'Twilio WhatsApp Assistant',
+        description: 'Conversational assistant integrating Twilio WhatsApp Business API and Google Calendar with serverless architecture.',
+        category: 'API Integration'
+      },
+      {
+        title: 'SIGADE System - Telcel',
+        description: 'Warranty management with Angular and NgRx, state optimization and performance.',
+        category: 'Enterprise System'
+      },
+      {
+        title: 'AI Analytics Platform',
+        description: 'Analytics platform with ML for BI and predictions.',
+        category: 'Data Science'
+      }
+    ]
   },
 
   blog: {
-    title: 'Articles'
+    title: 'Articles',
+    readMore: 'Read more',
+    filters: {
+      all: 'All',
+      design: 'Design',
+      code: 'Development',
+      tech: 'Technology'
+    },
+    categories: {
+      design: 'Design',
+      development: 'Development',
+      technology: 'Technology'
+    },
+    articles: [
+      {
+        title: 'Brand Identity with Code',
+        excerpt: 'Digital representation of brand values through design and interactive experiences.',
+        date: 'Apr 28, 2024'
+      },
+      {
+        title: 'Modern Data Infrastructure',
+        excerpt: 'Trends in data architecture, cloud and distributed systems.',
+        date: 'Apr 25, 2024'
+      },
+      {
+        title: 'Advanced React Patterns',
+        excerpt: 'Advanced patterns, hooks and performance for scalable apps.',
+        date: 'Apr 22, 2024'
+      }
+    ]
   },
 
   contact: {
@@ -59,6 +126,50 @@ export const en: Translations = {
     subject: 'Subject',
     message: 'Message',
     send: 'Send message'
+  },
+
+  services: {
+    title: 'Services',
+    frontend: {
+      title: 'Frontend Development',
+      description: 'Modern and scalable interfaces with Angular and TypeScript.'
+    },
+    architecture: {
+      title: 'Scalable Architecture',
+      description: 'Advanced patterns and Clean Architecture.'
+    },
+    optimization: {
+      title: 'Optimization',
+      description: 'Lazy loading, bundle optimization and efficient state management.'
+    },
+    backend: {
+      title: 'Backend Integration',
+      description: 'NestJS, Node.js and API integration.'
+    }
+  },
+
+  profile: {
+    location: 'Location',
+    experience: 'Experience',
+    workMode: 'Work Mode',
+    locationValue: 'Mérida, Yucatán, México',
+    experienceValue: '8+ Years',
+    workModeValue: 'Remote'
+  },
+
+  footer: {
+    description: 'Senior Frontend specialized in Angular and TypeScript. Available for remote work.',
+    links: 'Links',
+    services: 'Services',
+    webDev: 'Web Development',
+    mobileApps: 'Mobile Apps',
+    dataScience: 'Data Science',
+    consulting: 'Consulting',
+    projectMgmt: 'Project Management',
+    copyright: 'All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
+    cookies: 'Cookie Policy'
   },
 
   common: {

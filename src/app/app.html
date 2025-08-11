@@ -92,11 +92,11 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right" data-aos-duration="800">
               <h2 class="text-5xl lg:text-7xl font-bold mb-6">
-                <span class="bg-gradient-to-r from-text-primary via-accent to-text-primary bg-clip-text text-transparent animate-pulse-slow">Hola, soy</span><br/>
-                <span class="text-accent">Ignacio</span>
+                <span class="bg-gradient-to-r from-text-primary via-accent to-text-primary bg-clip-text text-transparent animate-pulse-slow">{{ t().about.greeting }}</span><br/>
+                <span class="text-accent">{{ t().about.name }}</span>
               </h2>
               <p class="text-xl lg:text-2xl text-text-secondary mb-8 leading-relaxed">
-                Desarrollador Frontend Senior con más de <span class="text-accent font-semibold">3 años</span> de experiencia, especializado en <span class="text-accent font-semibold">Angular</span> y <span class="text-accent font-semibold">TypeScript</span>, creando interfaces modernas y escalables para empresas como Procetti y Neoris.
+                {{ t().about.description }}
               </p>
               <div class="flex flex-wrap gap-4 mb-8">
                 <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">Angular</span>
@@ -109,10 +109,10 @@
               </div>
               <div class="flex flex-col sm:flex-row gap-4">
                 <a (click)="navigateToSection('projects')" class="bg-accent hover:bg-accent-dark px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
-                  <i data-lucide="eye" class="w-5 h-5 mr-2"></i> Ver proyectos
+                  <i data-lucide="eye" class="w-5 h-5 mr-2"></i> {{ t().about.viewProjects }}
                 </a>
                 <a (click)="navigateToSection('contact')" class="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center cursor-pointer">
-                  <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> Hablemos
+                  <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> {{ t().about.letsTalk }}
                 </a>
               </div>
             </div>
@@ -127,9 +127,9 @@
                       <img src="/placeholder.svg?height=192&width=192" alt="Foto de Ignacio Navarrete" class="w-full h-full object-cover rounded-full relative z-10"/>
                     </div>
                     <div class="space-y-4">
-                      <div class="flex items-center justify-between"><span class="text-text-secondary">Ubicación:</span><span class="text-accent">Mérida, Yucatán, México</span></div>
-                      <div class="flex items-center justify-between"><span class="text-text-secondary">Experiencia:</span><span class="text-accent">8+ Años</span></div>
-                      <div class="flex items-center justify-between"><span class="text-text-secondary">Modalidad:</span><span class="text-accent">Remoto</span></div>
+                      <div class="flex items-center justify-between"><span class="text-text-secondary">{{ t().profile.location }}:</span><span class="text-accent">{{ t().profile.locationValue }}</span></div>
+                      <div class="flex items-center justify-between"><span class="text-text-secondary">{{ t().profile.experience }}:</span><span class="text-accent">{{ t().profile.experienceValue }}</span></div>
+                      <div class="flex items-center justify-between"><span class="text-text-secondary">{{ t().profile.workMode }}:</span><span class="text-accent">{{ t().profile.workModeValue }}</span></div>
                     </div>
                   </div>
                 </div>
@@ -140,39 +140,39 @@
           <!-- Servicios -->
           <div class="mt-24">
             <h3 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
-              <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Servicios</span>
+              <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().services.title }}</span>
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div class="glass rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <i data-lucide="code" class="w-8 h-8 text-white"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4 text-center">Desarrollo Frontend</h4>
-                <p class="text-text-secondary text-center leading-relaxed">Interfaces modernas y escalables con Angular y TypeScript.</p>
+                <h4 class="text-xl font-bold mb-4 text-center">{{ t().services.frontend.title }}</h4>
+                <p class="text-text-secondary text-center leading-relaxed">{{ t().services.frontend.description }}</p>
               </div>
 
               <div class="glass rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="200">
                 <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <i data-lucide="settings" class="w-8 h-8 text-white"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4 text-center">Arquitectura Escalable</h4>
-                <p class="text-text-secondary text-center leading-relaxed">Patrones avanzados y Clean Architecture.</p>
+                <h4 class="text-xl font-bold mb-4 text-center">{{ t().services.architecture.title }}</h4>
+                <p class="text-text-secondary text-center leading-relaxed">{{ t().services.architecture.description }}</p>
               </div>
 
               <div class="glass rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="300">
                 <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4 text-center">Optimización</h4>
-                <p class="text-text-secondary text-center leading-relaxed">Lazy loading, optimización de bundles y estado eficiente.</p>
+                <h4 class="text-xl font-bold mb-4 text-center">{{ t().services.optimization.title }}</h4>
+                <p class="text-text-secondary text-center leading-relaxed">{{ t().services.optimization.description }}</p>
               </div>
 
               <div class="glass rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="400">
                 <div class="w-16 h-16 bg-gradient-to-r from-accent to-accent-dark rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <i data-lucide="server" class="w-8 h-8 text-white"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4 text-center">Integración Backend</h4>
-                <p class="text-text-secondary text-center leading-relaxed">NestJS, Node.js e integración de APIs.</p>
+                <h4 class="text-xl font-bold mb-4 text-center">{{ t().services.backend.title }}</h4>
+                <p class="text-text-secondary text-center leading-relaxed">{{ t().services.backend.description }}</p>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-2">
           <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Ignacio Navarrete</h3>
-          <p class="text-text-secondary leading-relaxed mb-6">Frontend Senior especializado en Angular y TypeScript. Disponible para trabajo remoto.</p>
+          <p class="text-text-secondary leading-relaxed mb-6">{{ t().footer.description }}</p>
           <div class="flex space-x-4">
             <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
@@ -217,34 +217,34 @@
         </div>
 
         <div>
-          <h4 class="font-semibold mb-4">Enlaces</h4>
+          <h4 class="font-semibold mb-4">{{ t().footer.links }}</h4>
           <ul class="space-y-2">
-            <li><a (click)="navigateToSection('about')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">About</a></li>
-            <li><a (click)="navigateToSection('resume')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">Resume</a></li>
-            <li><a (click)="navigateToSection('projects')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">Projects</a></li>
-            <li><a (click)="navigateToSection('blog')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">Blog</a></li>
-            <li><a (click)="navigateToSection('contact')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">Contact</a></li>
+            <li><a (click)="navigateToSection('about')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.about }}</a></li>
+            <li><a (click)="navigateToSection('resume')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.resume }}</a></li>
+            <li><a (click)="navigateToSection('projects')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.projects }}</a></li>
+            <li><a (click)="navigateToSection('blog')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.articles }}</a></li>
+            <li><a (click)="navigateToSection('contact')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.contact }}</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-semibold mb-4">Servicios</h4>
+          <h4 class="font-semibold mb-4">{{ t().footer.services }}</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">Web Development</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">Mobile Apps</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">Data Science</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">Consulting</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">Project Management</a></li>
+            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.webDev }}</a></li>
+            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.mobileApps }}</a></li>
+            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.dataScience }}</a></li>
+            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.consulting }}</a></li>
+            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.projectMgmt }}</a></li>
           </ul>
         </div>
       </div>
 
       <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-text-secondary text-sm">© 2025 Ignacio Navarrete. Todos los derechos reservados.</p>
+        <p class="text-text-secondary text-sm">© 2025 Ignacio Navarrete. {{ t().footer.copyright }}</p>
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">Privacy Policy</a>
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">Terms of Service</a>
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">Cookie Policy</a>
+          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.privacy }}</a>
+          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.terms }}</a>
+          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.cookies }}</a>
         </div>
       </div>
     </div>

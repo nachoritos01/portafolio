@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,13 +13,13 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 <section id="contact" class="min-h-screen p-8 lg:p-16 bg-dark-lighter/50">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16" data-aos="fade-up">
-      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Trabajemos juntos</span>
+      <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ t().contact.title }}</span>
     </h2>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <div data-aos="fade-right" data-aos-duration="800">
-        <h3 class="text-3xl font-bold mb-8">Contacto</h3>
-        <p class="text-text-secondary text-lg mb-12 leading-relaxed">¿Listo para iniciar tu proyecto? Hablemos y creemos algo increíble.</p>
+        <h3 class="text-3xl font-bold mb-8">{{ t().nav.contact }}</h3>
+        <p class="text-text-secondary text-lg mb-12 leading-relaxed">{{ t().contact.subtitle }}</p>
 
         <div class="space-y-6">
           <div class="flex items-center group">
@@ -26,8 +27,8 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               <i data-lucide="map-pin" class="w-6 h-6 text-accent"></i>
             </div>
             <div>
-              <h4 class="font-semibold mb-1">Ubicación</h4>
-              <p class="text-text-secondary">Mérida, Yucatán, México</p>
+              <h4 class="font-semibold mb-1">{{ t().contact.location }}</h4>
+              <p class="text-text-secondary">{{ t().profile.locationValue }}</p>
             </div>
           </div>
           <div class="flex items-center group">
@@ -35,7 +36,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
             </div>
             <div>
-              <h4 class="font-semibold mb-1">Email</h4>
+              <h4 class="font-semibold mb-1">{{ t().contact.email }}</h4>
               <a href="mailto:ignacionavarretedev@gmail.com" class="text-text-secondary hover:text-accent transition-colors">ignacionavarretedev&#64;gmail.com</a>
             </div>
           </div>
@@ -44,8 +45,8 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               <i data-lucide="globe" class="w-6 h-6 text-accent"></i>
             </div>
             <div>
-              <h4 class="font-semibold mb-1">Modalidad</h4>
-              <p class="text-accent">Trabajo Remoto</p>
+              <h4 class="font-semibold mb-1">{{ t().contact.workMode }}</h4>
+              <p class="text-accent">{{ t().contact.remote }}</p>
             </div>
           </div>
           <div class="flex items-center group">
@@ -53,14 +54,14 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               <i data-lucide="clock" class="w-6 h-6 text-accent"></i>
             </div>
             <div>
-              <h4 class="font-semibold mb-1">Disponibilidad</h4>
-              <p class="text-accent">Disponible para nuevos proyectos</p>
+              <h4 class="font-semibold mb-1">{{ t().contact.availability }}</h4>
+              <p class="text-accent">{{ t().contact.available }}</p>
             </div>
           </div>
         </div>
 
         <div class="mt-12">
-          <h4 class="font-semibold mb-6">Redes</h4>
+          <h4 class="font-semibold mb-6">{{ t().contact.socials }}</h4>
           <div class="flex space-x-4">
             <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
@@ -80,11 +81,11 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 
       <div data-aos="fade-left" data-aos-duration="800">
         <div class="glass rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-8">Envíame un mensaje</h3>
+          <h3 class="text-2xl font-bold mb-8">{{ t().contact.formTitle }}</h3>
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="firstName" class="block text-sm font-medium mb-2">Nombre</label>
+                <label for="firstName" class="block text-sm font-medium mb-2">{{ t().contact.firstName }}</label>
                 <input 
                   id="firstName" 
                   formControlName="firstName" 
@@ -92,7 +93,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
                 />
               </div>
               <div>
-                <label for="lastName" class="block text-sm font-medium mb-2">Apellido</label>
+                <label for="lastName" class="block text-sm font-medium mb-2">{{ t().contact.lastName }}</label>
                 <input 
                   id="lastName" 
                   formControlName="lastName" 
@@ -101,7 +102,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               </div>
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <label for="email" class="block text-sm font-medium mb-2">{{ t().contact.emailLabel }}</label>
               <input 
                 id="email" 
                 type="email" 
@@ -110,7 +111,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               />
             </div>
             <div>
-              <label for="subject" class="block text-sm font-medium mb-2">Asunto</label>
+              <label for="subject" class="block text-sm font-medium mb-2">{{ t().contact.subject }}</label>
               <select 
                 id="subject" 
                 formControlName="subject" 
@@ -125,7 +126,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               </select>
             </div>
             <div>
-              <label for="message" class="block text-sm font-medium mb-2">Mensaje</label>
+              <label for="message" class="block text-sm font-medium mb-2">{{ t().contact.message }}</label>
               <textarea 
                 id="message" 
                 formControlName="message" 
@@ -140,7 +141,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
               class="w-full bg-accent hover:bg-accent-dark px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:transform-none"
             >
               <i data-lucide="send" class="w-5 h-5 mr-2"></i> 
-              {{ isSubmitting() ? 'Enviando...' : 'Enviar' }}
+              {{ isSubmitting() ? 'Enviando...' : t().contact.send }}
             </button>
           </form>
         </div>
@@ -151,6 +152,11 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
   `
 })
 export class ContactComponent {
+  private translationService = inject(TranslationService);
+  
+  // Translation getter
+  t = () => this.translationService.t;
+  
   isSubmitting = signal(false);
   contactForm: FormGroup;
 
