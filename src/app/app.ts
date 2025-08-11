@@ -11,7 +11,8 @@ import { ProjectsComponent } from './components/projects.component';
 import { BlogComponent } from './components/blog.component';
 import { ContactComponent } from './components/contact.component';
 import { ParticlesComponent } from './components/particles.component';
-import { LanguageToggleComponent } from './components/language-toggle.component';
+import { SidebarComponent } from './components/sidebar.component';
+import { FooterComponent } from './components/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { LanguageToggleComponent } from './components/language-toggle.component'
     BlogComponent,
     ContactComponent,
     ParticlesComponent,
-    LanguageToggleComponent
+    SidebarComponent,
+    FooterComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',

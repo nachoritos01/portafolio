@@ -22,67 +22,15 @@
 
   <div class="flex min-h-screen relative z-10">
     <!-- Sidebar -->
-    <aside id="sidebar" [class]="'fixed lg:relative w-80 h-screen bg-dark-card/90 backdrop-blur-xl border-r border-white/10 p-6 flex flex-col items-center overflow-y-auto mobile-menu lg:translate-x-0 z-40' + (isMobileMenuOpen() ? ' active' : '')">
-      <button id="close-sidebar" (click)="closeMobileMenu()" class="absolute top-6 right-6 lg:hidden text-text-secondary hover:text-accent">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
-
-      <!-- Perfil -->
-      <div class="text-center mb-8" data-aos="fade-down" data-aos-delay="100">
-        <div class="relative w-32 h-32 mx-auto mb-6">
-          <div class="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 p-1 animate-glow">
-            <img src="/placeholder.svg?height=128&width=128" alt="Ignacio Navarrete" class="w-full h-full object-cover rounded-xl"/>
-          </div>
-          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-pulse">
-            <i data-lucide="check" class="w-4 h-4 text-white"></i>
-          </div>
-        </div>
-        <h1 class="text-2xl font-bold mb-2 bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Ignacio Navarrete</h1>
-        <p class="text-accent font-mono typing-text" id="typing-text">{{ typingText() }}</p>
-      </div>
-
-      <!-- Navegación -->
-      <nav class="w-full mb-8" data-aos="fade-up" data-aos-delay="200">
-        <ul class="space-y-2">
-          <li><a (click)="navigateToSection('about')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'about' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="user" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.about }}</span></a></li>
-          <li><a (click)="navigateToSection('resume')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'resume' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="file-text" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.resume }}</span></a></li>
-          <li><a (click)="navigateToSection('projects')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'projects' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="folder" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.projects }}</span></a></li>
-          <li><a (click)="navigateToSection('blog')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'blog' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="newspaper" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.articles }}</span></a></li>
-          <li><a (click)="navigateToSection('contact')" [class]="'nav-link flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-pointer ' + (activeSection() === 'contact' ? 'bg-white/10 text-accent' : 'text-text-secondary hover:text-accent')"><i data-lucide="mail" class="w-5 h-5 mr-3"></i><span class="text-sm font-medium">{{ t().nav.contact }}</span></a></li>
-        </ul>
-      </nav>
-
-      <!-- Social -->
-      <div class="flex space-x-4 mb-8" data-aos="fade-up" data-aos-delay="300">
-        <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
-        <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="x" class="w-5 h-5"></i></a>
-        <a href="https://instagram.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-      </div>
-
-      <!-- Acciones -->
-      <div class="space-y-3 w-full" data-aos="fade-up" data-aos-delay="400">
-        <a (click)="navigateToSection('contact')" class="w-full bg-accent hover:bg-accent-dark py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
-          <i data-lucide="phone" class="w-5 h-5 mr-2"></i> {{ t().common.contactMe }}
-        </a>
-        <a href="/cv.pdf" download="Ignacio_Navarrete_Dzul_CV_2025.pdf" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
-          <i data-lucide="download" class="w-5 h-5 mr-2"></i> {{ t().common.downloadCV }}
-        </a>
-      </div>
-
-      <!-- Controls -->
-      <div class="mt-auto space-y-4" data-aos="fade-up" data-aos-delay="500">
-        <!-- Language toggle -->
-        <app-language-toggle></app-language-toggle>
-        
-        <!-- Theme toggle -->
-        <div class="flex justify-center">
-          <button id="theme-toggle" (click)="toggleTheme()" class="p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-white/5 transition-all duration-300" aria-label="Cambiar tema">
-            <i [attr.data-lucide]="currentTheme() === 'dark' ? 'sun' : 'moon'" class="w-6 h-6"></i>
-          </button>
-        </div>
-      </div>
-    </aside>
+    <app-sidebar 
+      [isMobileMenuOpen]="isMobileMenuOpen()"
+      [activeSection]="activeSection()"
+      [typingText]="typingText()"
+      [currentTheme]="currentTheme()"
+      (closeMobileMenu)="closeMobileMenu()"
+      (navigateToSection)="navigateToSection($event)"
+      (toggleTheme)="toggleTheme()">
+    </app-sidebar>
 
     <!-- Main -->
     <main class="flex-1 lg:ml-0 relative">
@@ -194,59 +142,5 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark-card border-t border-white/10 py-12">
-    <div class="max-w-6xl mx-auto px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="md:col-span-2">
-          <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Ignacio Navarrete</h3>
-          <p class="text-text-secondary leading-relaxed mb-6">{{ t().footer.description }}</p>
-          <div class="flex space-x-4">
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
-              <i data-lucide="linkedin" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
-              <i data-lucide="github" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
-              <i data-lucide="twitter" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
-              <i data-lucide="instagram" class="w-5 h-5"></i>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="font-semibold mb-4">{{ t().footer.links }}</h4>
-          <ul class="space-y-2">
-            <li><a (click)="navigateToSection('about')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.about }}</a></li>
-            <li><a (click)="navigateToSection('resume')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.resume }}</a></li>
-            <li><a (click)="navigateToSection('projects')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.projects }}</a></li>
-            <li><a (click)="navigateToSection('blog')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.articles }}</a></li>
-            <li><a (click)="navigateToSection('contact')" class="text-text-secondary hover:text-accent transition-colors cursor-pointer">{{ t().nav.contact }}</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold mb-4">{{ t().footer.services }}</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.webDev }}</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.mobileApps }}</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.dataScience }}</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.consulting }}</a></li>
-            <li><a href="#" class="text-text-secondary hover:text-accent transition-colors">{{ t().footer.projectMgmt }}</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-text-secondary text-sm">© 2025 Ignacio Navarrete. {{ t().footer.copyright }}</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.privacy }}</a>
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.terms }}</a>
-          <a href="#" class="text-text-secondary hover:text-accent text-sm transition-colors">{{ t().footer.cookies }}</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <app-footer (navigateToSection)="navigateToSection($event)"></app-footer>
 </body>

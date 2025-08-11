@@ -29,7 +29,9 @@ import { ProjectData } from '../interfaces/project-data.interface';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <app-project-card [projectsData]="filteredProjects()" />
+      @for (project of filteredProjects(); track project.id) {
+        <app-project-card [projectData]="project" />
+      }
     </div>
   </div>
 </section>

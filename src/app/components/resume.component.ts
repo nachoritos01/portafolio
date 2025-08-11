@@ -31,8 +31,10 @@ import { SkillData } from '../interfaces/skill-data.interface';
           <h3 class="text-3xl font-bold">{{ t().resume.experience }}</h3>
         </div>
 
-        <div class="space-y-8">
-          <app-job-card [lastJobs]="jobsData()" />
+        <div>
+          @for (job of jobsData(); track job.companyName; let i = $index) {
+            <app-job-card [jobData]="job" [isFirst]="i === 0" />
+          }
         </div>
       </div>
 
@@ -45,8 +47,10 @@ import { SkillData } from '../interfaces/skill-data.interface';
           <h3 class="text-3xl font-bold">{{ t().resume.educationTitle }}</h3>
         </div>
 
-        <div class="space-y-8">
-          <app-education-card [educationData]="educationData()" />
+        <div>
+          @for (education of educationData(); track education.degree; let i = $index) {
+            <app-education-card [educationData]="education" [isFirst]="i === 0" />
+          }
         </div>
       </div>
     </div>
