@@ -1,0 +1,201 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+/* // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tec.sandbox.web.client-primary: mat.define-palette(mat.$indigo-palette);
+$tec.sandbox.web.client-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tec.sandbox.web.client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$tec.sandbox.web.client-theme: mat.define-light-theme((
+  color: (
+    primary: $tec.sandbox.web.client-primary,
+    accent: $tec.sandbox.web.client-accent,
+    warn: $tec.sandbox.web.client-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($tec.sandbox.web.client-theme); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================================
+   TEC.SANDBOX DESIGN SYSTEM - EXTENSION TO TEC DS-NG
+   ================================================================ */
+
+:root {
+  /* === SANDBOX SPECIFIC VARIABLES (EXTENDING TEC DS-NG) === */
+  /* These variables extend the existing TEC Design System */
+  
+  /* Custom brand colors specific to Sandbox */
+  --tec-sandbox-brand-light: #D3D7E4;    /* Consistent with body background */
+  --tec-sandbox-brand-bamboo: #617196;   /* Bamboo gray for secondary text */
+  --tec-sandbox-brand-disabled: #d3d7e4; /* Disabled state background */
+  --tec-sandbox-brand-disabled-text: #adb6cc; /* Disabled state text */
+
+  /* === SANDBOX SEMANTIC THEME VARIABLES === */
+  /* These map to existing TEC DS-NG variables for consistency */
+  --tec-sandbox-bg-primary: var(--tec-sandbox-brand-light);
+  --tec-sandbox-bg-secondary: var(--containers-main);
+  --tec-sandbox-bg-card: var(--containers-modal);
+  --tec-sandbox-bg-template: var(--tec-sandbox-brand-light);
+  
+  --tec-sandbox-text-primary: var(--general_contrasts-100);
+  --tec-sandbox-text-secondary: var(--general_contrasts-75);
+  --tec-sandbox-text-muted: var(--tec-sandbox-brand-bamboo);
+  
+  --tec-sandbox-border-primary: var(--general_contrasts-container-outline);
+  --tec-sandbox-border-secondary: var(--general_contrasts-25);
+  
+  --tec-sandbox-shadow-sm: var(--bmb-box-shadow-1);
+  --tec-sandbox-shadow-md: var(--bmb-box-shadow-2);
+  --tec-sandbox-shadow-lg: var(--bmb-box-shadow-3);
+}
+
+/* === SANDBOX DARK THEME OVERRIDES === */
+/* These automatically inherit from TEC DS-NG dark theme variables */
+[data-theme="dark"] {
+  --tec-sandbox-bg-primary: var(--containers-background);
+  --tec-sandbox-bg-secondary: var(--containers-main);
+  --tec-sandbox-bg-card: var(--containers-modal);
+  --tec-sandbox-bg-template: var(--containers-main);
+  
+  --tec-sandbox-text-primary: var(--general_contrasts-100);
+  --tec-sandbox-text-secondary: var(--general_contrasts-75);
+  --tec-sandbox-text-muted: var(--general_contrasts-50);
+  
+  --tec-sandbox-border-primary: var(--general_contrasts-container-outline);
+  --tec-sandbox-border-secondary: var(--general_contrasts-25);
+}
+
+/* === COMPATIBILITY ALIASES === */
+/* For backward compatibility with existing code */
+:root {
+  --tec-bg-primary: var(--tec-sandbox-bg-primary);
+  --tec-bg-secondary: var(--tec-sandbox-bg-secondary);
+  --tec-bg-card: var(--tec-sandbox-bg-card);
+  --tec-bg-template: var(--tec-sandbox-bg-template);
+  
+  --tec-text-primary: var(--tec-sandbox-text-primary);
+  --tec-text-secondary: var(--tec-sandbox-text-secondary);
+  --tec-text-muted: var(--tec-sandbox-text-muted);
+  
+  --tec-border-primary: var(--tec-sandbox-border-primary);
+  --tec-border-secondary: var(--tec-sandbox-border-secondary);
+  
+  --tec-shadow-sm: var(--tec-sandbox-shadow-sm);
+  --tec-shadow-md: var(--tec-sandbox-shadow-md);
+  --tec-shadow-lg: var(--tec-sandbox-shadow-lg);
+}
+
+
+@import 'material-symbols/outlined.css';
+@import 'material-symbols/rounded.css';
+@import 'material-symbols/sharp.css';
+
+
+.material-symbols-outlined {
+  transform: scale(.8);
+  font-variation-settings:
+  'FILL' 1
+}
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: var(--tec-bg-primary) !important;
+}
+
+button:disabled {
+  background-color: var(--tec-sandbox-brand-disabled) !important;
+  color: var(--tec-sandbox-brand-disabled-text) !important;
+}
+
+
+@layer components {
+  .btn {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  }
+
+  .card-sanbox {
+    @apply bg-red-800 text-white border-2 border-red-900 shadow-md rounded-lg p-6;
+  }
+  .card-sanbox-withe {
+    @apply bg-white  border-2 text-black shadow-md rounded-lg p-6;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.gray-bamboo {
+  color: var(--tec-sandbox-brand-bamboo);
+}
+
+.bmb_template-main-full{
+  margin-top: 0 !important;
+
+}
+main.not-slide.bmb_template-main-full-card {
+  margin-left: 0;
+}
+.bmb_template-aside-full-main{
+  margin-left: 5rem;
+}
+.not-slide.bmb_template-aside-full-main{
+  margin-left: 0;
+}
+main.bmb_template-aside-full-main.not-slide,
+main.bmb_template-aside-full-main {
+  padding-left: 1.5rem;
+}
+
+/* Theme Support for bmb_template classes using CSS variables */
+.bmb_template-main-full,
+.bmb_template-main-full-card,
+.bmb_template-aside-full-main {
+  background-color: var(--tec-bg-template);
+  color: var(--tec-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+label{
+  color: RGBA(var(--color-charade-950));
+}
+
+
+bmb-input.custom-input {
+  span.bmb_input-validation-label {
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+.bmb_top-bar-app-name-powered {
+  visibility: hidden;
+}
+
+.custom-home-card section.bmb_home-card-container.bmb_padding-l {
+    min-height: 64vh;
+}

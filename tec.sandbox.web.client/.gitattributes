@@ -1,0 +1,56 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Angular/TypeScript files - enforce LF line endings
+*.ts text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.md text eol=lf
+
+# Configuration files - enforce LF line endings
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.config text eol=lf
+karma.conf.js text eol=lf
+angular.json text eol=lf
+package.json text eol=lf
+package-lock.json text eol=lf
+tsconfig*.json text eol=lf
+*.eslintrc* text eol=lf
+
+# Docker files
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+.dockerignore text eol=lf
+
+# Shell scripts - must have LF line endings
+*.sh text eol=lf
+
+# Windows batch files - enforce CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files - do not touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+
+# Font files
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+*.otf binary
+
+# Certificate files
+*.pem text eol=lf
+*.key text eol=lf
+*.crt text eol=lf
