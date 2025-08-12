@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact.component';
 import { ParticlesComponent } from './components/particles.component';
 import { SidebarComponent } from './components/sidebar.component';
 import { FooterComponent } from './components/footer.component';
+import { TechStackComponent } from './components/tech-stack.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer.component';
     ContactComponent,
     ParticlesComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    TechStackComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
