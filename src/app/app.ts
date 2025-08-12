@@ -50,6 +50,9 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   
   // Personal info signals
   personalInfo = this.personalInfoService.info;
+  
+  // Sidebar configuration
+  sidebarFixed = true;
 
   ngOnInit() {
     // Component initialization - translations are auto-initialized

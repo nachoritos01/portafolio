@@ -50,7 +50,7 @@
 - **Resume** - Experiencia laboral real (Procetti, Neoris, Nova Solutions)
 - **Projects** - Proyectos reales con filtros dinámicos
 - **Blog** - Artículos categorizados
-- **Contact** - Formulario reactivo con datos reales
+- **Contact** - Formulario reactivo con EmailJS integrado
 - **Skills** - Barras de progreso animadas con tecnologías reales
 
 ## 👨‍💻 **Información Personal Integrada**
@@ -93,6 +93,12 @@ npm run build               # Build de producción optimizado
 npm test                    # Tests unitarios con Karma/Jasmine
 npm run lint               # ESLint + Prettier
 
+# 📊 GitHub Stats API (servidor adicional)
+cd server                   # Cambiar al directorio del servidor
+npm install                 # Instalar dependencias Node.js
+npm start                   # Iniciar servidor: http://localhost:3000
+npm run dev                 # Desarrollo con nodemon
+
 # 🔍 Información
 npm run ng version          # Versión de Angular CLI
 ```
@@ -105,14 +111,32 @@ src/app/
 │   ├── resume.component.ts      # 📄 Experiencia y educación con datos reales
 │   ├── projects.component.ts    # 💼 Proyectos reales con filtros
 │   ├── blog.component.ts        # 📝 Artículos y categorías
-│   ├── contact.component.ts     # 📧 Formulario con datos reales
+│   ├── contact.component.ts     # 📧 Formulario con EmailJS integrado
+│   ├── sidebar.component.ts     # 🧭 Sidebar configurable (fijo/relativo)
+│   ├── footer.component.ts      # 🦶 Footer con año dinámico
 │   └── language-toggle.component.ts # 🌍 Selector de idioma ES/EN
 ├── services/
 │   ├── portfolio.service.ts     # 🎛 Estado global con Signals
-│   └── translation.service.ts   # 🌐 Sistema de internacionalización
+│   ├── translation.service.ts   # 🌐 Sistema de internacionalización
+│   ├── personal-info.service.ts # 👤 Información personal centralizada
+│   └── email.service.ts         # 📧 EmailJS para formulario de contacto
+├── interfaces/
+│   └── personal-info.interface.ts # 🏷 Tipado para información personal
+├── pages/                    # 📄 Páginas legales
+│   ├── privacy.component.ts     # 🔒 Política de privacidad
+│   ├── terms.component.ts       # 📋 Términos y condiciones
+│   ├── cookies.component.ts     # 🍪 Política de cookies
+│   └── not-found.component.ts   # ❌ Página 404 con efectos
 ├── app.ts                   # 🏠 Componente principal
 ├── app.html                 # 📄 Template principal (réplica exacta HTML)
 └── styles.css              # 🎨 Estilos globales (CSS original preservado)
+
+server/                      # 📊 GitHub Stats API
+├── app.js                   # 🚀 Express.js + GitHub API
+├── package.json             # 📦 Dependencias Node.js
+├── README.md                # 📖 Documentación API
+└── public/
+    └── portfolio.html       # 📈 Frontend Chart.js
 ```
 
 ## 🧩 Componentes Implementados
@@ -120,11 +144,79 @@ src/app/
 | Componente | Descripción | Tecnologías |
 |-----------|-------------|-------------|
 | `App` | Layout principal con sidebar, navegación e i18n | Standalone + Signals + OnPush |
+| `SidebarComponent` | Navegación lateral configurable (fijo/relativo) | Signals + Input Properties + Z-index |
+| `FooterComponent` | Footer con año dinámico y navegación | PersonalInfoService + RouterModule |
+| `ContactComponent` | Formulario funcional con EmailJS | ReactiveFormsModule + EmailJS |
+| `PersonalInfoService` | Información centralizada con año dinámico | Signals + Computed + Interface |
+| `EmailService` | Integración EmailJS para formulario | Gmail API + Axios + Cache |
 | `LanguageToggleComponent` | Selector bilingüe ES/EN | Signals + LocalStorage |
 | `ResumeComponent` | Experiencia laboral real y skills | Signals + Intersection Observer |
 | `ProjectsComponent` | Proyectos reales con filtros dinámicos | Computed Signals + CommonModule |
 | `BlogComponent` | Artículos categorizados | Signals + Filtros reactivos |
-| `ContactComponent` | Formulario con datos de contacto reales | ReactiveFormsModule + Validation |
+
+## 📧 Sistema de Contacto con EmailJS
+
+### **Formulario Funcional Integrado**
+- ✅ **EmailJS Integration** - Envío real de emails a través de Gmail
+- ✅ **Validación Reactiva** - Angular ReactiveFormsModule con validadores
+- ✅ **Notificaciones UX** - Feedback visual de éxito/error
+- ✅ **Información Centralizada** - PersonalInfoService como single source of truth
+- ✅ **Configuración Segura** - Keys públicas en frontend, sin backend requerido
+
+### **GitHub Stats API (Node.js)**
+```typescript
+// Aplicación completa Node.js + Chart.js
+server/
+├── app.js                   # Express API con GitHub integration
+├── public/portfolio.html    # Frontend con Chart.js
+└── README.md               # Documentación completa
+
+// Características principales:
+- 📊 Visualización de commits mensuales con Chart.js
+- 🔄 Cache automático (10 minutos) para performance
+- 📄 Paginación para repositorios grandes
+- 🔑 Soporte para tokens GitHub (evita rate limits)
+- 💾 Descarga de datos en JSON
+- 📱 Responsive design acorde al portafolio
+```
+
+### **PersonalInfoService - Centralización de Datos**
+```typescript
+@Injectable({ providedIn: 'root' })
+export class PersonalInfoService {
+  private personalInfo = signal<PersonalInfo>({
+    name: 'Ignacio Navarrete Dzul',
+    shortName: 'Ignacio',
+    title: 'Desarrollador Sr. Frontend | Especialista en Angular',
+    email: 'ignacio_navarrete_dzul@outlook.com',
+    location: 'Mérida, Yucatán, México',
+    cvFileName: 'Ignacio_Navarrete_Dzul_CV',
+    // ... más datos centralizados
+  });
+
+  // Computed signals para fácil acceso
+  currentYear = computed(() => new Date().getFullYear());
+  
+  // Elimina texto hardcodeado en toda la app
+  info = computed(() => this.personalInfo());
+}
+```
+
+### **Sidebar Configurable**
+```typescript
+// Input property para controlar comportamiento
+@Input() isFixed: boolean = true;
+
+getSidebarClasses(): string {
+  if (this.isFixed) {
+    // Modo fijo: siempre visible en desktop
+    return 'fixed -translate-x-full lg:translate-x-0 z-50';
+  } else {
+    // Modo relativo: comportamiento original
+    return 'fixed lg:relative z-50';
+  }
+}
+```
 
 ## 🌍 Sistema de Internacionalización
 
@@ -247,7 +339,10 @@ export class PortfolioService {
 - [x] Layout responsivo con sidebar y navegación
 - [x] Todas las secciones implementadas con datos reales
 - [x] Sistema de temas dark/light reactivo
-- [x] Formulario de contacto funcional
+- [x] **Formulario de contacto funcional con EmailJS**
+- [x] **GitHub Stats API con Node.js + Chart.js**
+- [x] **PersonalInfoService centralizado con año dinámico**
+- [x] **Sidebar configurable (fijo/relativo) con z-index optimizado**
 - [x] Animaciones y transiciones CSS
 - [x] Build optimizado para producción
 - [x] Ready para deploy en Vercel

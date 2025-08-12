@@ -11,7 +11,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Sidebar -->
-    <aside id="sidebar" [class]="'fixed lg:relative w-80 h-screen bg-dark-card/90 backdrop-blur-xl border-r border-white/10 p-6 flex flex-col items-center overflow-y-auto mobile-menu lg:translate-x-0 z-40' + (isMobileMenuOpen ? ' active' : '')">
+    <aside id="sidebar" [class]="getSidebarClasses()">
       <button id="close-sidebar" (click)="onCloseMobileMenu()" class="absolute top-6 right-6 lg:hidden text-text-secondary hover:text-accent">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
@@ -82,6 +82,7 @@ export class SidebarComponent {
   @Input() activeSection: string = 'about';
   @Input() typingText: string = '';
   @Input() currentTheme: string = 'dark';
+  @Input() isFixed: boolean = true;
   
   @Output() closeMobileMenu = new EventEmitter<void>();
   @Output() navigateToSection = new EventEmitter<string>();
@@ -103,5 +104,21 @@ export class SidebarComponent {
   
   onToggleTheme() {
     this.toggleTheme.emit();
+  }
+  
+  getSidebarClasses(): string {
+    const baseClasses = 'w-80 h-screen bg-dark-card/90 backdrop-blur-xl border-r border-white/10 p-6 flex flex-col items-center overflow-y-auto mobile-menu z-50';
+    
+    if (this.isFixed) {
+      // Modo fijo: siempre visible en desktop, deslizable en móvil
+      const fixedClasses = 'fixed -translate-x-full lg:translate-x-0';
+      const mobileToggle = this.isMobileMenuOpen ? ' !translate-x-0' : '';
+      return `${baseClasses} ${fixedClasses}${mobileToggle}`;
+    } else {
+      // Modo relativo: comportamiento original
+      const relativeClasses = 'fixed lg:relative lg:translate-x-0';
+      const mobileToggle = this.isMobileMenuOpen ? ' active' : '';
+      return `${baseClasses} ${relativeClasses}${mobileToggle}`;
+    }
   }
 }

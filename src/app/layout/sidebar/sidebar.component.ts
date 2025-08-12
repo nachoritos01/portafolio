@@ -10,7 +10,7 @@ import { PersonalInfoService } from '../../services/personal-info.service';
   imports: [CommonModule, ThemeToggleComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <aside class="fixed lg:relative w-80 h-screen bg-gray-900 backdrop-blur-xl border-r border-gray-700 p-6 flex flex-col items-center overflow-y-auto z-40 transition-transform duration-300">
+    <aside class="fixed lg:relative w-80 h-screen bg-gray-900 backdrop-blur-xl border-r border-gray-700 p-6 flex flex-col items-center overflow-y-auto z-50 transition-transform duration-300">
       
       <!-- Perfil -->
       <div class="text-center mb-8">
