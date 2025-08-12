@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import emailjs from '@emailjs/browser';
+import { PersonalInfoService } from './personal-info.service';
 
 export interface ContactFormData {
   firstName: string;
@@ -18,6 +19,8 @@ export interface EmailResponse {
   providedIn: 'root'
 })
 export class EmailService {
+  private personalInfoService = inject(PersonalInfoService);
+  
   // Configuración de EmailJS - Variables públicas (seguras para frontend)
   private readonly serviceId = 'service_690asur';
   private readonly templateId = 'template_7se6mlo';
@@ -37,7 +40,7 @@ export class EmailService {
         subject: this.getSubjectText(formData.subject),
         message: formData.message,
         reply_to: formData.email,
-        to_name: 'Ignacio Navarrete',
+        to_name: this.personalInfoService.info().name,
         // Información adicional para el template
         contact_info: `
 Nombre: ${formData.firstName} ${formData.lastName}

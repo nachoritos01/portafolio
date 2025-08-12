@@ -14,4 +14,7 @@ export interface PersonalInfo {
   workMode: string;
   availability: string;
   experience: string;
+  cvFileName: string;
+  shortName: string; // First name only
+  fullTitle: string; // Extended professional title
 }

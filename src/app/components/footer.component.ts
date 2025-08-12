@@ -56,7 +56,7 @@ import { PersonalInfoService } from '../services/personal-info.service';
         </div>
 
         <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-text-secondary text-sm">© 2025 {{ personalInfo().name }}. {{ t().footer.copyright }}</p>
+          <p class="text-text-secondary text-sm">© {{ personalInfoService.currentYear() }} {{ personalInfo().name }}. {{ t().footer.copyright }}</p>
           <p class="text-text-secondary text-sm mt-4 md:mt-0">
             {{ t().footer.madeWith }} <span class="text-accent">Angular</span> & <span class="text-accent">TailwindCSS</span>
           </p>
@@ -67,7 +67,7 @@ import { PersonalInfoService } from '../services/personal-info.service';
 })
 export class FooterComponent {
   private translationService = inject(TranslationService);
-  private personalInfoService = inject(PersonalInfoService);
+  public personalInfoService = inject(PersonalInfoService);
   
   @Output() navigateToSection = new EventEmitter<string>();
   

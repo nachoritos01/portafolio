@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
+import { PersonalInfoService } from '../services/personal-info.service';
 import { LanguageToggleComponent } from './language-toggle.component';
 
 @Component({
@@ -19,13 +20,13 @@ import { LanguageToggleComponent } from './language-toggle.component';
       <div class="text-center mb-8" data-aos="fade-down" data-aos-delay="100">
         <div class="relative w-32 h-32 mx-auto mb-6">
           <div class="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 p-1 animate-glow">
-            <img src="/profile-2.jpeg" alt="Ignacio Navarrete" class="w-full h-full object-cover rounded-xl"/>
+            <img [src]="personalInfo().profileImage" [alt]="personalInfo().name" class="w-full h-full object-cover rounded-xl"/>
           </div>
           <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-pulse">
             <i data-lucide="check" class="w-4 h-4 text-white"></i>
           </div>
         </div>
-        <h1 class="text-2xl font-bold mb-2 bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">Ignacio Navarrete</h1>
+        <h1 class="text-2xl font-bold mb-2 bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">{{ personalInfo().name }}</h1>
         <p class="text-accent font-mono typing-text" id="typing-text">{{ typingText }}</p>
       </div>
 
@@ -42,10 +43,10 @@ import { LanguageToggleComponent } from './language-toggle.component';
 
       <!-- Social -->
       <div class="flex space-x-4 mb-8" data-aos="fade-up" data-aos-delay="300">
-        <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
-        <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="x" class="w-5 h-5"></i></a>
-        <a href="https://instagram.com/nachoritos" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a [href]="personalInfo().socialMedia.linkedin" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        <a [href]="personalInfo().socialMedia.github" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
+        <a [href]="personalInfo().socialMedia.twitter" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="x" class="w-5 h-5"></i></a>
+        <a [href]="personalInfo().socialMedia.instagram" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
       </div>
 
       <!-- Acciones -->
@@ -53,7 +54,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
         <a (click)="onNavigateToSection('contact')" class="w-full bg-accent hover:bg-accent-dark py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
           <i data-lucide="phone" class="w-5 h-5 mr-2"></i> {{ t().common.contactMe }}
         </a>
-        <a href="/cv.pdf" download="Ignacio_Navarrete_Dzul_CV_2025.pdf" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
+        <a href="/cv.pdf" [download]="personalInfo().cvFileName + '_' + personalInfoService.currentYear() + '.pdf'" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
           <i data-lucide="download" class="w-5 h-5 mr-2"></i> {{ t().common.downloadCV }}
         </a>
       </div>
@@ -75,6 +76,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
 })
 export class SidebarComponent {
   private translationService = inject(TranslationService);
+  public personalInfoService = inject(PersonalInfoService);
   
   @Input() isMobileMenuOpen: boolean = false;
   @Input() activeSection: string = 'about';
@@ -87,6 +89,9 @@ export class SidebarComponent {
   
   // Translation getter
   t = () => this.translationService.t;
+  
+  // Personal info getter
+  personalInfo = this.personalInfoService.info;
   
   onCloseMobileMenu() {
     this.closeMobileMenu.emit();

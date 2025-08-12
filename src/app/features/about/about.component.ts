@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PersonalInfoService } from '../../services/personal-info.service';
 
 @Component({
   selector: 'app-about',
@@ -20,12 +21,12 @@ import { CommonModule } from '@angular/common';
                 Hola, soy
               </span>
               <br>
-              <span class="text-green-500">Ignacio</span>
+              <span class="text-green-500">{{ personalInfo().shortName }}</span>
             </h2>
             
             <p class="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Desarrollador Frontend Senior con más de 
-              <span class="text-green-500 font-semibold">8 años</span> 
+              {{ personalInfo().title }} con más de 
+              <span class="text-green-500 font-semibold">{{ personalInfo().experience }}</span> 
               de experiencia, especializado en 
               <span class="text-green-500 font-semibold">Angular</span> y 
               <span class="text-green-500 font-semibold">TypeScript</span>, 
@@ -64,13 +65,13 @@ import { CommonModule } from '@angular/common';
                   <div class="w-48 h-48 mx-auto mb-6 relative">
                     <img 
                       src="/placeholder.svg?height=192&width=192" 
-                      alt="Foto de Ignacio Navarrete" 
+                      [alt]="'Foto de ' + personalInfo().name" 
                       class="w-full h-full object-cover rounded-full relative z-10"
                       loading="lazy">
                   </div>
                   
                   <div class="space-y-4">
-                    <div *ngFor="let info of personalInfo" class="flex items-center justify-between">
+                    <div *ngFor="let info of aboutInfo" class="flex items-center justify-between">
                       <span class="text-gray-300">{{ info.label }}:</span>
                       <span class="text-green-500 font-medium">{{ info.value }}</span>
                     </div>
@@ -85,11 +86,20 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class AboutComponent {
+  private personalInfoService = inject(PersonalInfoService);
+  
+  // Personal info getter
+  personalInfo = this.personalInfoService.info;
+  
   readonly mainSkills = ['Angular', 'TypeScript', 'NgRx', 'RxJS', 'NestJS'];
 
-  readonly personalInfo = [
-    { label: 'Ubicación', value: 'Mérida, Yucatán, México' },
-    { label: 'Experiencia', value: '8+ Años' },
-    { label: 'Modalidad', value: 'Remoto' }
-  ];
+  // Computed info using service data
+  get aboutInfo() {
+    const info = this.personalInfo();
+    return [
+      { label: 'Ubicación', value: info.location },
+      { label: 'Experiencia', value: info.experience },
+      { label: 'Modalidad', value: info.workMode }
+    ];
+  }
 }

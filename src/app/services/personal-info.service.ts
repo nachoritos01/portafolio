@@ -7,15 +7,18 @@ import { PersonalInfo } from '../interfaces/personal-info.interface';
 export class PersonalInfoService {
   private personalInfo = signal<PersonalInfo>({
     name: 'Ignacio Navarrete Dzul',
+    shortName: 'Ignacio',
     title: 'Desarrollador Sr. Frontend | Especialista en Angular',
+    fullTitle: 'Desarrollador Frontend Senior con más de 8 años de experiencia, especializado en Angular y TypeScript',
     email: 'ignacio_navarrete_dzul@outlook.com',
     phone: '(999) 902 3895',
     location: 'Mérida, Yucatán, México',
     profileImage: '/profile-2.jpeg',
+    cvFileName: 'Ignacio_Navarrete_Dzul_CV',
     socialMedia: {
       linkedin: 'https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/',
       github: 'https://github.com/nachoritos01',
-      twitter: 'https://x.com/ignacionavarrete',
+      twitter: 'https://x.com/nachoritos01',
       instagram: 'https://www.instagram.com/nachoritos'
     },
     workMode: 'Remoto | Híbrido',
@@ -35,6 +38,12 @@ export class PersonalInfoService {
   workMode = computed(() => this.personalInfo().workMode);
   availability = computed(() => this.personalInfo().availability);
   experience = computed(() => this.personalInfo().experience);
+  shortName = computed(() => this.personalInfo().shortName);
+  fullTitle = computed(() => this.personalInfo().fullTitle);
+  cvFileName = computed(() => this.personalInfo().cvFileName);
+  
+  // Computed for current year
+  currentYear = computed(() => new Date().getFullYear());
 
   // Method to update personal info if needed
   updatePersonalInfo(newInfo: Partial<PersonalInfo>) {
