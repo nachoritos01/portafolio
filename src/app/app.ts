@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Services
 import { PortfolioService } from './services/portfolio.service';
 import { TranslationService } from './services/translation.service';
+import { PersonalInfoService } from './services/personal-info.service';
 
 // Components  
 import { ResumeComponent } from './components/resume.component';
@@ -34,6 +35,7 @@ import { FooterComponent } from './components/footer.component';
 export class App implements OnInit, AfterViewInit, OnDestroy {
   private portfolioService = inject(PortfolioService);
   private translationService = inject(TranslationService);
+  private personalInfoService = inject(PersonalInfoService);
   
   // Expose service signals to template
   currentTheme = this.portfolioService.currentTheme;
@@ -45,6 +47,9 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   // Translation signals
   t = computed(() => this.translationService.translations());
   currentLanguage = this.translationService.currentLanguage;
+  
+  // Personal info signals
+  personalInfo = this.personalInfoService.info;
 
   ngOnInit() {
     // Component initialization - translations are auto-initialized

@@ -1,0 +1,133 @@
+<div class="min-h-screen bg-dark flex items-center justify-center p-8">
+  <!-- Parallax background -->
+  <div class="fixed inset-0 parallax-bg z-0"></div>
+  
+  <!-- Particles -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="particle" style="left: 10%; animation-delay: 0s; width: 4px; height: 4px;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s; width: 2px; height: 2px;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s; width: 3px; height: 3px;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 1s; width: 2px; height: 2px;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 3s; width: 4px; height: 4px;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 5s; width: 2px; height: 2px;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 0.5s; width: 3px; height: 3px;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 2.5s; width: 2px; height: 2px;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 4.5s; width: 4px; height: 4px;"></div>
+  </div>
+
+  <div class="max-w-2xl mx-auto text-center relative z-10">
+    <!-- Error Code -->
+    <div class="mb-8" data-aos="fade-up">
+      <h1 class="text-9xl lg:text-[12rem] font-bold">
+        <span class="bg-gradient-to-r from-accent via-accent-dark to-accent bg-clip-text text-transparent animate-pulse-slow">404</span>
+      </h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="glass rounded-3xl p-8 lg:p-12 mb-8" data-aos="fade-up" data-aos-delay="200">
+      <!-- Icon -->
+      <div class="w-24 h-24 bg-gradient-to-r from-accent to-accent-dark rounded-full flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="compass" class="w-12 h-12 text-white"></i>
+      </div>
+
+      <!-- Title -->
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">
+          Página No Encontrada
+        </span>
+      </h2>
+
+      <!-- Description -->
+      <p class="text-text-secondary text-lg leading-relaxed mb-8">
+        Lo siento, la página que estás buscando no existe. Es posible que haya sido movida, 
+        eliminada o que hayas ingresado una URL incorrecta.
+      </p>
+
+      <!-- Suggestions -->
+      <div class="bg-dark-card rounded-xl p-6 border border-white/10 mb-8">
+        <h3 class="text-xl font-semibold text-accent mb-4">¿Qué puedes hacer?</h3>
+        <ul class="text-text-secondary space-y-2 text-left">
+          <li class="flex items-center">
+            <i data-lucide="check-circle" class="w-5 h-5 text-accent mr-3 flex-shrink-0"></i>
+            Verificar la URL que ingresaste
+          </li>
+          <li class="flex items-center">
+            <i data-lucide="check-circle" class="w-5 h-5 text-accent mr-3 flex-shrink-0"></i>
+            Navegar desde el menú principal
+          </li>
+          <li class="flex items-center">
+            <i data-lucide="check-circle" class="w-5 h-5 text-accent mr-3 flex-shrink-0"></i>
+            Contactarme si crees que es un error
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          (click)="goHome()"
+          class="bg-accent hover:bg-accent-dark px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+          <i data-lucide="home" class="w-5 h-5 mr-2"></i>
+          Ir al Inicio
+        </button>
+        
+        <button 
+          (click)="goBack()"
+          class="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center">
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+          Volver Atrás
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="400">
+      <button 
+        (click)="navigateToSection('about')"
+        class="glass rounded-xl p-4 hover-lift text-center group">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:bg-accent/20 transition-colors">
+          <i data-lucide="user" class="w-6 h-6 text-accent"></i>
+        </div>
+        <span class="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">Sobre Mí</span>
+      </button>
+
+      <button 
+        (click)="navigateToSection('resume')"
+        class="glass rounded-xl p-4 hover-lift text-center group">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:bg-accent/20 transition-colors">
+          <i data-lucide="file-text" class="w-6 h-6 text-accent"></i>
+        </div>
+        <span class="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">Experiencia</span>
+      </button>
+
+      <button 
+        (click)="navigateToSection('projects')"
+        class="glass rounded-xl p-4 hover-lift text-center group">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:bg-accent/20 transition-colors">
+          <i data-lucide="code" class="w-6 h-6 text-accent"></i>
+        </div>
+        <span class="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">Proyectos</span>
+      </button>
+
+      <button 
+        (click)="navigateToSection('contact')"
+        class="glass rounded-xl p-4 hover-lift text-center group">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:bg-accent/20 transition-colors">
+          <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
+        </div>
+        <span class="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">Contacto</span>
+      </button>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="600">
+      <p class="text-text-muted text-sm mb-2">
+        Si el problema persiste, puedes contactarme
+      </p>
+      <a [href]="'mailto:' + personalInfo().email" class="text-accent hover:text-accent-dark transition-colors text-sm">
+        <i data-lucide="mail" class="w-4 h-4 inline mr-1"></i>
+        {{ personalInfo().email }}
+      </a>
+    </div>
+  </div>
+</div>

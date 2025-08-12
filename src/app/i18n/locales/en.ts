@@ -219,7 +219,14 @@ export const en: Translations = {
     copyright: 'All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
-    cookies: 'Cookie Policy'
+    cookies: 'Cookie Policy',
+    quickLinks: 'Quick Links',
+    about: 'About',
+    resume: 'Experience',
+    projects: 'Projects',
+    contact: 'Contact',
+    legal: 'Legal',
+    madeWith: 'Made with'
   },
 
   common: {

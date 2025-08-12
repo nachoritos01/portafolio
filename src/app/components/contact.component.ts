@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, signal, inject } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslationService } from '../services/translation.service';
+import { PersonalInfoService } from '../services/personal-info.service';
 
 @Component({
   selector: 'app-contact',
@@ -28,7 +29,7 @@ import { TranslationService } from '../services/translation.service';
             </div>
             <div>
               <h4 class="font-semibold mb-1">{{ t().contact.location }}</h4>
-              <p class="text-text-secondary">{{ t().profile.locationValue }}</p>
+              <p class="text-text-secondary">{{ personalInfo().location }}</p>
             </div>
           </div>
           <div class="flex items-center group">
@@ -37,7 +38,7 @@ import { TranslationService } from '../services/translation.service';
             </div>
             <div>
               <h4 class="font-semibold mb-1">{{ t().contact.email }}</h4>
-              <a href="mailto:ignacionavarretedev@gmail.com" class="text-text-secondary hover:text-accent transition-colors">ignacionavarretedev&#64;gmail.com</a>
+              <a [href]="'mailto:' + personalInfo().email" class="text-text-secondary hover:text-accent transition-colors">{{ personalInfo().email }}</a>
             </div>
           </div>
           <div class="flex items-center group">
@@ -63,16 +64,16 @@ import { TranslationService } from '../services/translation.service';
         <div class="mt-12">
           <h4 class="font-semibold mb-6">{{ t().contact.socials }}</h4>
           <div class="flex space-x-4">
-            <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a [href]="personalInfo().socialMedia.linkedin" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
-            <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a [href]="personalInfo().socialMedia.github" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="github" class="w-5 h-5"></i>
             </a>
-            <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a [href]="personalInfo().socialMedia.twitter" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="x" class="w-5 h-5"></i>
             </a>
-            <a href="https://instagram.com/ignacionavarrete" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
+            <a [href]="personalInfo().socialMedia.instagram" target="_blank" rel="noopener" class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110">
               <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
           </div>
@@ -153,9 +154,13 @@ import { TranslationService } from '../services/translation.service';
 })
 export class ContactComponent {
   private translationService = inject(TranslationService);
+  private personalInfoService = inject(PersonalInfoService);
   
   // Translation getter
   t = () => this.translationService.t;
+  
+  // Personal info getter
+  personalInfo = this.personalInfoService.info;
   
   isSubmitting = signal(false);
   contactForm: FormGroup;

@@ -6,7 +6,7 @@ export interface ProjectData {
   technologies: string[];
   category: string;
   type: string;
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
   delay: number;
 }

@@ -90,7 +90,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.procetti.timePeriod,
         title: this.t().resume.jobs.procetti.title,
         description: this.t().resume.jobs.procetti.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/proceti']
+        socialMedia: ['https://www.linkedin.com/company/proceti'],
+        image: 'proceti_logo.jpg'
       },
       {
         skillSets: ['Angular Material', 'Tailwind CSS', 'NgRx'],
@@ -98,7 +99,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.neoris.timePeriod,
         title: this.t().resume.jobs.neoris.title,
         description: this.t().resume.jobs.neoris.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/neoris']
+        socialMedia: ['https://www.linkedin.com/company/neoris'],
+        image: 'neoris_logo.jpg' // Placeholder hasta tener logo de Neoris
       },
       {
         skillSets: ['Angular 12', 'Migration', 'AngularJS'],
@@ -106,7 +108,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.nova.timePeriod,
         title: this.t().resume.jobs.nova.title,
         description: this.t().resume.jobs.nova.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/novasolutionsystems/']
+        socialMedia: ['https://www.linkedin.com/company/novasolutionsystems/'],
+        image: 'novasolutionsystems_logo.jpg'
       },
       {
         skillSets: ['Angular', 'Angular Material', 'Express.js', 'Node.js'],
@@ -114,7 +117,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.relappro.timePeriod,
         title: this.t().resume.jobs.relappro.title,
         description: this.t().resume.jobs.relappro.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/relap']
+        socialMedia: ['https://www.linkedin.com/company/relap'],
+        image: 'relap_logo.jpg'
       },
       {
         skillSets: ['PHP', 'Symfony Framework', 'Jira', 'Twig'],
@@ -122,7 +126,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.simetrical.timePeriod,
         title: this.t().resume.jobs.simetrical.title,
         description: this.t().resume.jobs.simetrical.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/simdatagroup/']
+        socialMedia: ['https://www.linkedin.com/company/simdatagroup/'],
+        image: 'simdatagroup_logo.jpg'
       },
       {
         skillSets: ['PHP', 'CodeIgniter Framework', 'MySQL', 'MVC', 'AngularJS'],
@@ -130,7 +135,8 @@ export class ResumeComponent implements OnInit {
         timePeriod: this.t().resume.jobs.efisense.timePeriod,
         title: this.t().resume.jobs.efisense.title,
         description: this.t().resume.jobs.efisense.descriptions,
-        socialMedia: ['https://www.linkedin.com/company/efisense/']
+        socialMedia: ['https://www.linkedin.com/company/efisense/'],
+        image: 'efisense_logo.jpg'
       }
     ]);
   }

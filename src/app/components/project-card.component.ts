@@ -14,12 +14,18 @@ import { ProjectData } from '../interfaces/project-data.interface';
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
           <div class="p-6">
             <div class="flex space-x-4">
-              <a [href]="projectData.liveUrl" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
-                <i data-lucide="external-link" class="w-5 h-5"></i>
-              </a>
-              <a [href]="projectData.githubUrl" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
-                <i data-lucide="github" class="w-5 h-5"></i>
-              </a>
+               @if(projectData.liveUrl){
+
+                 <a [href]="projectData.liveUrl" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                   <i data-lucide="external-link" class="w-5 h-5"></i>
+                 </a>
+               }
+              @if(projectData.githubUrl){
+
+                <a [href]="projectData.githubUrl" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+              }
             </div>
           </div>
         </div>

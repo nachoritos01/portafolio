@@ -5,4 +5,5 @@ export interface JobData {
   title: string;
   description: string[];
   socialMedia: string[];
+  image: string;
 }

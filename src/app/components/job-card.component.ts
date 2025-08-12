@@ -16,7 +16,15 @@ import { JobData } from '../interfaces/job-data.interface';
           <span class="text-accent text-sm font-mono bg-accent/10 px-3 py-1 rounded-full">
             {{ jobData.timePeriod }}
           </span>
-          <img src="/placeholder.svg?height=24&width=60" [alt]="jobData.companyName" class="h-6 opacity-70"/>
+          <div class="flex items-center gap-2">
+            <img [src]="'/jobs-logos/' + jobData.image" [alt]="jobData.companyName" class="h-8 opacity-80 rounded"/>
+            @if (jobData.socialMedia.length > 0) {
+              <a [href]="jobData.socialMedia[0]" target="_blank" rel="noopener" 
+                 class="w-6 h-6 bg-white/5 rounded-full flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300">
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            }
+          </div>
         </div>
         <h4 class="text-xl font-bold mb-2">{{ jobData.title }}</h4>
         <p class="text-accent text-sm mb-4">{{ jobData.companyName }}</p>

@@ -185,6 +185,13 @@ export interface Translations {
     privacy: string;
     terms: string;
     cookies: string;
+    quickLinks: string;
+    about: string;
+    resume: string;
+    projects: string;
+    contact: string;
+    legal: string;
+    madeWith: string;
   };
 
   // Common/shared translations

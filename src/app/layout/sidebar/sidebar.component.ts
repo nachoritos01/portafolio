@@ -2,6 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationService } from '../../core/services/navigation.service';
 import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
+import { PersonalInfoService } from '../../services/personal-info.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,18 +17,18 @@ import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme
         <div class="relative w-32 h-32 mx-auto mb-6">
           <div class="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-green-500/20 to-green-500/5 p-1">
             <img 
-              src="/placeholder.svg?height=128&width=128" 
-              alt="Ignacio Navarrete" 
+              [src]="personalInfo().profileImage" 
+              [alt]="personalInfo().name" 
               class="w-full h-full object-cover rounded-xl"
               loading="lazy">
           </div>
         </div>
         
         <h1 class="text-2xl font-bold mb-2 text-white">
-          Ignacio Navarrete
+          {{ personalInfo().name }}
         </h1>
         
-        <p class="text-green-500 font-mono text-sm">Frontend Developer</p>
+        <p class="text-green-500 font-mono text-sm">{{ personalInfo().title }}</p>
       </div>
 
       <!-- Navegación -->
@@ -54,6 +55,10 @@ import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme
 })
 export class SidebarComponent {
   readonly navigationService = inject(NavigationService);
+  private personalInfoService = inject(PersonalInfoService);
+  
+  // Personal info getter
+  personalInfo = this.personalInfoService.info;
 
   readonly navigationItems = [
     { id: 'about', label: 'ABOUT' },

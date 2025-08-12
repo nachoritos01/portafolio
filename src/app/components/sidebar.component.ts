@@ -19,7 +19,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
       <div class="text-center mb-8" data-aos="fade-down" data-aos-delay="100">
         <div class="relative w-32 h-32 mx-auto mb-6">
           <div class="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 p-1 animate-glow">
-            <img src="/placeholder.svg?height=128&width=128" alt="Ignacio Navarrete" class="w-full h-full object-cover rounded-xl"/>
+            <img src="/profile-2.jpeg" alt="Ignacio Navarrete" class="w-full h-full object-cover rounded-xl"/>
           </div>
           <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-pulse">
             <i data-lucide="check" class="w-4 h-4 text-white"></i>
@@ -45,7 +45,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
         <a href="https://www.linkedin.com/in/ignacionavarrete-front-end-developer-angular/" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         <a href="https://github.com/nachoritos01" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
         <a href="https://x.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="x" class="w-5 h-5"></i></a>
-        <a href="https://instagram.com/ignacionavarrete" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="https://instagram.com/nachoritos" target="_blank" rel="noopener" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
       </div>
 
       <!-- Acciones -->

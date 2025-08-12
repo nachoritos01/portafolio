@@ -219,7 +219,14 @@ export const es: Translations = {
     copyright: 'Todos los derechos reservados.',
     privacy: 'Política de Privacidad',
     terms: 'Términos de Servicio',
-    cookies: 'Política de Cookies'
+    cookies: 'Política de Cookies',
+    quickLinks: 'Enlaces Rápidos',
+    about: 'Sobre Mí',
+    resume: 'Experiencia',
+    projects: 'Proyectos',
+    contact: 'Contacto',
+    legal: 'Legal',
+    madeWith: 'Hecho con'
   },
 
   common: {

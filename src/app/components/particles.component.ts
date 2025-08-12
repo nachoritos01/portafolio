@@ -3,7 +3,20 @@ import { Component, OnInit, OnDestroy, ElementRef, inject, DOCUMENT } from '@ang
 @Component({
   selector: 'app-particles',
   standalone: true,
-  template: `<div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>`
+  template: `
+    <div id="particles" class="fixed inset-0 pointer-events-none" style="z-index: 5;">
+      <!-- Static particles for visual effect -->
+      <div class="particle" style="left: 10%; animation-delay: 0s; width: 4px; height: 4px;"></div>
+      <div class="particle" style="left: 20%; animation-delay: 2s; width: 2px; height: 2px;"></div>
+      <div class="particle" style="left: 30%; animation-delay: 4s; width: 3px; height: 3px;"></div>
+      <div class="particle" style="left: 40%; animation-delay: 1s; width: 2px; height: 2px;"></div>
+      <div class="particle" style="left: 50%; animation-delay: 3s; width: 4px; height: 4px;"></div>
+      <div class="particle" style="left: 60%; animation-delay: 5s; width: 2px; height: 2px;"></div>
+      <div class="particle" style="left: 70%; animation-delay: 0.5s; width: 3px; height: 3px;"></div>
+      <div class="particle" style="left: 80%; animation-delay: 2.5s; width: 2px; height: 2px;"></div>
+      <div class="particle" style="left: 90%; animation-delay: 4.5s; width: 4px; height: 4px;"></div>
+    </div>
+  `
 })
 export class ParticlesComponent implements OnInit, OnDestroy {
   private elementRef = inject(ElementRef);
@@ -23,7 +36,7 @@ export class ParticlesComponent implements OnInit, OnDestroy {
   }
   
   private startParticleSystem() {
-    // Código exacto del HTML original
+    // Sistema de partículas dinámicas
     const createParticle = () => {
       const particlesContainer = this.document.getElementById('particles');
       if (!particlesContainer) return;

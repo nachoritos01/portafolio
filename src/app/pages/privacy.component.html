@@ -1,0 +1,163 @@
+ <div class="min-h-screen bg-dark p-8 lg:p-16">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+        <span class="bg-gradient-to-r from-text-primary to-accent bg-clip-text text-transparent">
+          Política de Privacidad
+        </span>
+      </h1>
+      <p class="text-text-secondary text-lg">
+        Última actualización: Enero 2025
+      </p>
+    </div>
+
+    <!-- Contenido -->
+    <div class="glass rounded-3xl p-8 lg:p-12 space-y-8">
+      
+      <!-- Introducción -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">1. Introducción</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Esta Política de Privacidad describe cómo {{ personalInfo().name }} ("yo", "mi", "mí") 
+          recopila, usa y protege la información que usted proporciona cuando utiliza mi sitio web 
+          de portafolio profesional.
+        </p>
+        <p class="text-text-secondary leading-relaxed">
+          Al utilizar este sitio web, usted acepta la recopilación y el uso de información 
+          de acuerdo con esta política.
+        </p>
+      </section>
+
+      <!-- Información que recopilamos -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">2. Información que Recopilamos</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">2.1 Información Personal</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Cuando utiliza el formulario de contacto, puede proporcionarnos información personal como:
+            </p>
+            <ul class="list-disc list-inside mt-2 text-text-secondary space-y-1 ml-4">
+              <li>Nombre y apellidos</li>
+              <li>Dirección de correo electrónico</li>
+              <li>Mensaje o consulta</li>
+              <li>Asunto del mensaje</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-2">2.2 Información de Navegación</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Automáticamente recopilamos cierta información cuando visita nuestro sitio:
+            </p>
+            <ul class="list-disc list-inside mt-2 text-text-secondary space-y-1 ml-4">
+              <li>Dirección IP</li>
+              <li>Tipo de navegador</li>
+              <li>Páginas visitadas</li>
+              <li>Tiempo de permanencia</li>
+              <li>Fecha y hora de acceso</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Uso de la información -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">3. Uso de la Información</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Utilizamos la información recopilada para:
+        </p>
+        <ul class="list-disc list-inside text-text-secondary space-y-2 ml-4">
+          <li>Responder a sus consultas y comunicaciones</li>
+          <li>Mejorar nuestro sitio web y servicios</li>
+          <li>Analizar el uso del sitio web</li>
+          <li>Enviar información relacionada con oportunidades profesionales (solo si es solicitado)</li>
+          <li>Cumplir con obligaciones legales</li>
+        </ul>
+      </section>
+
+      <!-- Protección de datos -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">4. Protección de Datos</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Implementamos medidas de seguridad apropiadas para proteger su información personal:
+        </p>
+        <ul class="list-disc list-inside text-text-secondary space-y-2 ml-4">
+          <li>Encriptación SSL/TLS para transmisión de datos</li>
+          <li>Acceso restringido a información personal</li>
+          <li>Almacenamiento seguro de datos</li>
+          <li>Monitoreo regular de vulnerabilidades</li>
+        </ul>
+      </section>
+
+      <!-- Cookies -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">5. Cookies</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Este sitio web utiliza cookies para mejorar su experiencia:
+        </p>
+        <ul class="list-disc list-inside text-text-secondary space-y-2 ml-4">
+          <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento básico del sitio</li>
+          <li><strong>Cookies de preferencias:</strong> Recordar configuraciones de tema y idioma</li>
+          <li><strong>Cookies analíticas:</strong> Entender cómo los usuarios interactúan con el sitio</li>
+        </ul>
+      </section>
+
+      <!-- Derechos del usuario -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">6. Sus Derechos</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Usted tiene derecho a:
+        </p>
+        <ul class="list-disc list-inside text-text-secondary space-y-2 ml-4">
+          <li>Acceder a su información personal</li>
+          <li>Rectificar datos inexactos</li>
+          <li>Solicitar la eliminación de sus datos</li>
+          <li>Limitar el procesamiento de sus datos</li>
+          <li>Portabilidad de datos</li>
+          <li>Retirar consentimiento en cualquier momento</li>
+        </ul>
+      </section>
+
+      <!-- Contacto -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">7. Contacto</h2>
+        <p class="text-text-secondary leading-relaxed mb-4">
+          Si tiene preguntas sobre esta Política de Privacidad, puede contactarme:
+        </p>
+        <div class="bg-dark-card rounded-xl p-6 border border-white/10">
+          <p class="text-text-secondary mb-2">
+            <strong>Email:</strong> 
+            <a [href]="'mailto:' + personalInfo().email" class="text-accent hover:text-accent-dark transition-colors">
+              {{ personalInfo().email }}
+            </a>
+          </p>
+          <p class="text-text-secondary">
+            <strong>Ubicación:</strong> {{ personalInfo().location }}
+          </p>
+        </div>
+      </section>
+
+      <!-- Cambios -->
+      <section>
+        <h2 class="text-2xl font-bold text-accent mb-4">8. Cambios a esta Política</h2>
+        <p class="text-text-secondary leading-relaxed">
+          Me reservo el derecho de actualizar esta Política de Privacidad en cualquier momento. 
+          Los cambios serán efectivos inmediatamente después de su publicación en esta página. 
+          Se recomienda revisar esta página periódicamente para estar al tanto de cualquier cambio.
+        </p>
+      </section>
+    </div>
+
+    <!-- Footer de página -->
+    <div class="mt-12 text-center">
+      <button 
+        onclick="window.history.back()" 
+        class="bg-accent hover:bg-accent-dark px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+        <i data-lucide="arrow-left" class="w-5 h-5 inline mr-2"></i>
+        Volver
+      </button>
+    </div>
+  </div>
+</div>
