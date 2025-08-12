@@ -22,7 +22,7 @@ import { FooterComponent } from './components/footer.component';
     CommonModule,
     ResumeComponent,
     ProjectsComponent,
-    BlogComponent,
+    // BlogComponent, // Comentado hasta implementar
     ContactComponent,
     ParticlesComponent,
     SidebarComponent,
