@@ -1,0 +1,19 @@
+{
+  "name": "github-stats-api",
+  "version": "1.0.0",
+  "description": "API para obtener estadísticas de commits de GitHub",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

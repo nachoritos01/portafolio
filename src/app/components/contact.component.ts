@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslationService } from '../services/translation.service';
 import { PersonalInfoService } from '../services/personal-info.service';
+import { EmailService, ContactFormData } from '../services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -136,13 +137,25 @@ import { PersonalInfoService } from '../services/personal-info.service';
                 class="w-full bg-dark-card border border-white/10 rounded-xl px-4 py-3 focus:border-accent focus:outline-none resize-none"
               ></textarea>
             </div>
+            <!-- Mensaje de respuesta -->
+            <div *ngIf="submitMessage()" class="mb-4 p-4 rounded-xl" 
+                 [class]="submitSuccess() ? 'bg-green-500/10 border border-green-500/20 text-green-400' : 'bg-red-500/10 border border-red-500/20 text-red-400'">
+              <div class="flex items-center">
+                <i [attr.data-lucide]="submitSuccess() ? 'check-circle' : 'alert-circle'" class="w-5 h-5 mr-2"></i>
+                {{ submitMessage() }}
+              </div>
+            </div>
+
             <button 
               type="submit" 
               [disabled]="contactForm.invalid || isSubmitting()"
               class="w-full bg-accent hover:bg-accent-dark px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:transform-none"
             >
-              <i data-lucide="send" class="w-5 h-5 mr-2"></i> 
-              {{ isSubmitting() ? 'Enviando...' : t().contact.send }}
+              <div class="flex items-center">
+                <i *ngIf="isSubmitting()" data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i>
+                <i *ngIf="!isSubmitting()" data-lucide="send" class="w-5 h-5 mr-2"></i>
+                {{ isSubmitting() ? 'Enviando...' : t().contact.send }}
+              </div>
             </button>
           </form>
         </div>
@@ -155,6 +168,7 @@ import { PersonalInfoService } from '../services/personal-info.service';
 export class ContactComponent {
   private translationService = inject(TranslationService);
   private personalInfoService = inject(PersonalInfoService);
+  private emailService = inject(EmailService);
   
   // Translation getter
   t = () => this.translationService.t;
@@ -163,6 +177,8 @@ export class ContactComponent {
   personalInfo = this.personalInfoService.info;
   
   isSubmitting = signal(false);
+  submitMessage = signal<string>('');
+  submitSuccess = signal<boolean | null>(null);
   contactForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -178,13 +194,46 @@ export class ContactComponent {
   async onSubmit() {
     if (this.contactForm.valid && !this.isSubmitting()) {
       this.isSubmitting.set(true);
+      this.submitMessage.set('');
+      this.submitSuccess.set(null);
       
-      // Simular envío de formulario
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Formulario enviado:', this.contactForm.value);
-      this.contactForm.reset();
-      this.isSubmitting.set(false);
+      try {
+        // Preparar datos del formulario
+        const formData: ContactFormData = {
+          firstName: this.contactForm.value.firstName,
+          lastName: this.contactForm.value.lastName,
+          email: this.contactForm.value.email,
+          subject: this.contactForm.value.subject,
+          message: this.contactForm.value.message
+        };
+
+        console.log('Enviando formulario de contacto:', formData);
+
+        // Enviar email usando EmailJS
+        const result = await this.emailService.sendContactEmail(formData);
+        
+        if (result.success) {
+          this.submitMessage.set(result.message);
+          this.submitSuccess.set(true);
+          this.contactForm.reset();
+          
+          // Limpiar mensaje después de 5 segundos
+          setTimeout(() => {
+            this.submitMessage.set('');
+            this.submitSuccess.set(null);
+          }, 5000);
+        } else {
+          this.submitMessage.set(result.message);
+          this.submitSuccess.set(false);
+        }
+
+      } catch (error) {
+        console.error('Error inesperado al enviar formulario:', error);
+        this.submitMessage.set('Error inesperado. Por favor contacta directamente: ' + this.personalInfo().email);
+        this.submitSuccess.set(false);
+      } finally {
+        this.isSubmitting.set(false);
+      }
     }
   }
 }
