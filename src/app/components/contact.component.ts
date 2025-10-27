@@ -4,11 +4,13 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { TranslationService } from '../services/translation.service';
 import { PersonalInfoService } from '../services/personal-info.service';
 import { EmailService, ContactFormData } from '../services/email.service';
+import { ReCaptchaV3Service, NgxCaptchaModule } from 'ngx-captcha';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgxCaptchaModule],
+  providers: [ReCaptchaV3Service],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
 <!-- Contacto -->
@@ -169,13 +171,18 @@ export class ContactComponent {
   private translationService = inject(TranslationService);
   private personalInfoService = inject(PersonalInfoService);
   private emailService = inject(EmailService);
-  
+  private recaptchaV3Service = inject(ReCaptchaV3Service);
+
+  // reCAPTCHA v3 Site Key - Reemplaza con tu clave real de Google reCAPTCHA
+  // Obtén tu clave en: https://www.google.com/recaptcha/admin/create
+  readonly siteKey = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; // Esta es una clave de prueba de Google
+
   // Translation getter
   t = () => this.translationService.t;
-  
+
   // Personal info getter
   personalInfo = this.personalInfoService.info;
-  
+
   isSubmitting = signal(false);
   submitMessage = signal<string>('');
   submitSuccess = signal<boolean | null>(null);
@@ -196,8 +203,23 @@ export class ContactComponent {
       this.isSubmitting.set(true);
       this.submitMessage.set('');
       this.submitSuccess.set(null);
-      
+
       try {
+        // Ejecutar reCAPTCHA v3 para obtener el token
+        console.log('Verificando reCAPTCHA...');
+        const recaptchaToken = await this.recaptchaV3Service.execute(
+          this.siteKey,
+          'contact_form',
+          (token) => {
+            console.log('reCAPTCHA token obtenido:', token.substring(0, 20) + '...');
+          },
+          {
+            useGlobalDomain: false
+          }
+        );
+
+        console.log('reCAPTCHA verificado exitosamente');
+
         // Preparar datos del formulario
         const formData: ContactFormData = {
           firstName: this.contactForm.value.firstName,
@@ -211,12 +233,12 @@ export class ContactComponent {
 
         // Enviar email usando EmailJS
         const result = await this.emailService.sendContactEmail(formData);
-        
+
         if (result.success) {
           this.submitMessage.set(result.message);
           this.submitSuccess.set(true);
           this.contactForm.reset();
-          
+
           // Limpiar mensaje después de 5 segundos
           setTimeout(() => {
             this.submitMessage.set('');
