@@ -54,7 +54,7 @@ import { LanguageToggleComponent } from './language-toggle.component';
         <a (click)="onNavigateToSection('contact')" class="w-full bg-accent hover:bg-accent-dark py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center cursor-pointer">
           <i data-lucide="phone" class="w-5 h-5 mr-2"></i> {{ t().common.contactMe }}
         </a>
-        <a href="/cv.pdf" [download]="personalInfo().cvFileName + '_' + personalInfoService.currentYear() + '.pdf'" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
+        <a [href]="getCVUrl()" [download]="personalInfo().cvFileName + '_' + personalInfoService.currentYear() + '.pdf'" class="w-full border border-white/20 text-text-secondary hover:text-accent hover:border-accent py-3 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center hover:bg-white/5">
           <i data-lucide="download" class="w-5 h-5 mr-2"></i> {{ t().common.downloadCV }}
         </a>
       </div>
@@ -77,22 +77,28 @@ import { LanguageToggleComponent } from './language-toggle.component';
 export class SidebarComponent {
   private translationService = inject(TranslationService);
   public personalInfoService = inject(PersonalInfoService);
-  
+
   @Input() isMobileMenuOpen: boolean = false;
   @Input() activeSection: string = 'about';
   @Input() typingText: string = '';
   @Input() currentTheme: string = 'dark';
   @Input() isFixed: boolean = true;
-  
+
   @Output() closeMobileMenu = new EventEmitter<void>();
   @Output() navigateToSection = new EventEmitter<string>();
   @Output() toggleTheme = new EventEmitter<void>();
-  
+
   // Translation getter
   t = () => this.translationService.t;
-  
+
   // Personal info getter
   personalInfo = this.personalInfoService.info;
+
+  // Get CV URL based on current language
+  getCVUrl(): string {
+    const currentLang = this.translationService.currentLanguage();
+    return `/cv-ignacio-navarrete-${currentLang}.pdf`;
+  }
   
   onCloseMobileMenu() {
     this.closeMobileMenu.emit();
