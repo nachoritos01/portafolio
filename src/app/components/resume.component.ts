@@ -85,6 +85,15 @@ export class ResumeComponent implements OnInit {
   private updateJobsData() {
     this.jobsData.set([
       {
+        skillSets: ['Laravel 12', 'Next.js 16', 'PostgreSQL', 'Stripe', 'LLMs'],
+        companyName: this.t().resume.jobs.independent.company,
+        timePeriod: this.t().resume.jobs.independent.timePeriod,
+        title: this.t().resume.jobs.independent.title,
+        description: this.t().resume.jobs.independent.descriptions,
+        socialMedia: ['https://www.godinoterapia.com/printflow'],
+        image: 'printflow_logo.svg'
+      },
+      {
         skillSets: ['Angular 19', 'NgRx Signals', 'RxJS', 'Tailwind CSS'],
         companyName: this.t().resume.companies.procetti,
         timePeriod: this.t().resume.jobs.procetti.timePeriod,
@@ -166,10 +175,12 @@ export class ResumeComponent implements OnInit {
     this.skillsData.set([
       { name: 'Angular', percentage: 95, delay: 100 },
       { name: 'TypeScript', percentage: 92, delay: 200 },
-      { name: 'JavaScript', percentage: 90, delay: 300 },
-      { name: 'NgRx & RxJS', percentage: 88, delay: 400 },
-      { name: 'Node.js', percentage: 85, delay: 500 },
-      { name: 'MySQL', percentage: 80, delay: 600 }
+      { name: 'Desarrollo con LLMs (Claude Code, Codex, Kimi)', percentage: 90, delay: 400 },
+      { name: 'NgRx & RxJS', percentage: 88, delay: 500 },
+      { name: 'Laravel & PHP', percentage: 85, delay: 600 },
+      { name: 'Next.js & React', percentage: 82, delay: 700 },
+      { name: 'Node.js & NestJS', percentage: 85, delay: 800 },
+      { name: 'PostgreSQL', percentage: 82, delay: 900 }
     ]);
   }
 }

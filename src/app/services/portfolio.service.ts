@@ -20,8 +20,8 @@ export class PortfolioService {
   activeSection = signal<string>('about');
   
   // Typing animation
-  typingText = signal('Frontend Developer');
-  private typingTexts = ['Frontend Developer', 'Angular Specialist', 'TypeScript Expert', 'UI/UX Enthusiast'];
+  typingText = signal('Sr. Full Stack Developer');
+  private typingTexts = ['Sr. Full Stack Developer', 'Angular Specialist', 'AI-Assisted Developer', 'Product Builder'];
   private currentTextIndex = 0;
   private currentCharIndex = 0;
   private isDeleting = false;

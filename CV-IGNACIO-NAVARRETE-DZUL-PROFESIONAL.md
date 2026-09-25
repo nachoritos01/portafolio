@@ -15,7 +15,10 @@
 
 Desarrollador Sr. Frontend especializado en Angular con más de 8 años de experiencia en el desarrollo de aplicaciones web modernas y escalables. Experto en migración de versiones de Angular, optimización de performance y arquitectura de código limpio. Demostrada capacidad para liderar procesos de refactorización complejos, implementar mejores prácticas de desarrollo y transformar proyectos legacy en soluciones tecnológicas modernas.
 
+En 2026 construí y llevé a producción, sin supervisión y de punta a punta, tres productos propios con clientes reales: un SaaS multi-tenant para imprentas (PrintFlow, que ya usan varias imprentas), una tienda de playeras personalizadas (Godinoterapia) y un e-commerce de diseños digitales en Next.js (VectorSensei). Uso LLMs y agentes de código como una herramienta más para avanzar rápido; las decisiones, las revisiones y la responsabilidad de lo que sale a producción siguen siendo mías.
+
 **Especialización técnica:** Angular 4-19, NgRx, RxJS, TypeScript, Arquitectura Frontend  
+**Desarrollo con IA:** LLMs y agentes de código (Claude Code, Codex, Kimi), con reglas, skills y contexto por proyecto  
 **Enfoque profesional:** Código limpio, experiencia de usuario optimizada, liderazgo técnico  
 **Fortalezas clave:** Migración de sistemas legacy, optimización de performance, mentoría técnica
 
@@ -35,6 +38,10 @@ Desarrollador Sr. Frontend especializado en Angular con más de 8 años de exper
 - **PHP:** Symfony framework, Legacy systems maintenance
 - **Database:** SQL, NoSQL, ORM patterns
 - **API Integration:** REST, GraphQL, WebSocket implementations
+
+### Inteligencia Artificial
+- **Desarrollo asistido por IA:** LLMs y agentes de código (Claude Code, Codex, Kimi) con subagentes propios, skills, reglas de proyecto, servidores MCP y contexto versionado en el repo
+- **Uso responsable:** Reviso y entiendo cada cambio antes de aceptarlo; no comparto código, datos ni credenciales de clientes con servicios externos sin su permiso; nada llega a producción sin pruebas y la responsabilidad es mía, no de la herramienta
 
 ### DevOps & Tools
 - **Version Control:** Git, GitLab, Bitbucket, Conventional Commits
@@ -148,6 +155,33 @@ Desarrollador Sr. Frontend especializado en Angular con más de 8 años de exper
 ---
 
 ## Proyectos Destacados
+
+### PrintFlow - SaaS para Imprentas ([godinoterapia.com/printflow](https://www.godinoterapia.com/printflow))
+**Tecnologías:** Laravel 12, PHP 8.4, Livewire, Filament 3, PostgreSQL, Stripe Billing, Conekta, Envia.com, Docker, Railway, GitHub Actions, LLMs
+
+**Contribuciones técnicas realizadas:**
+- Diseño, desarrollo y operación de un SaaS multi-tenant que ya usan varios negocios en su día a día: pedidos, tablero de producción, pagos, envíos, cotizaciones en PDF y portal de clientes
+- Registro, onboarding, planes con prueba gratuita y suscripciones con Stripe Billing
+- Storefront headless en Next.js 16 ([godinoterapia-laravel.vercel.app](https://godinoterapia-laravel.vercel.app/)) que consume la API multi-tenant: catálogo, Studio para montar diseños sobre el producto, checkout, cuenta de cliente y sitio bilingüe
+- Motor de precios con varias estrategias y comandos de auditoría que miden la deriva entre lo configurado y lo cobrado en producción
+- Calidad sostenida: pruebas automatizadas, PHPStan, PHP CS Fixer y CI en GitHub Actions en cada cambio, con releases versionados
+- Desarrollo con LLMs y agentes de código como parte del equipo: subagentes especializados (desarrollo Laravel, guardián de precios, documentación, marketing), skills y reglas anti-bug del proyecto
+
+### Godinoterapia - Tienda de Playeras Personalizadas ([godinoterapia.com](https://www.godinoterapia.com/))
+**Tecnologías:** Laravel 12, Livewire, PostgreSQL, Tailwind CSS, Conekta, Railway
+
+**Contribuciones técnicas realizadas:**
+- Tienda en producción con catálogo, cotizador en línea, carrito y pedidos con anticipo
+
+### VectorSensei - Tienda de Diseños Digitales ([vectorsensei.com](https://vectorsensei.com))
+**Tecnologías:** Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Neon Postgres, Drizzle ORM, Stripe, MercadoPago, Cloudflare R2, Auth.js, Upstash Redis, Resend, Vercel
+
+**Contribuciones técnicas realizadas:**
+- Desarrollo end-to-end de e-commerce en producción de vectores listos para imprimir, desde un prototipo de diseño hasta la app Next.js 16 (App Router)
+- Arquitectura Server Components por defecto con páginas prerenderizadas (SSG) y catálogo cacheado por tags
+- Pagos únicos con Stripe y MercadoPago procesados por webhooks idempotentes como única fuente de verdad
+- Membresías recurrentes con Stripe Billing, portal de facturación y programa de puntos canjeables
+- Entrega de archivos privados en Cloudflare R2 mediante URLs firmadas efímeras, login con Google (Auth.js) y rate limiting con Upstash Redis
 
 ### TEC Sandbox - Modernización Angular Empresarial
 **Tecnologías:** Angular 19, NgRx Signals, TypeScript, Tailwind CSS, Docker

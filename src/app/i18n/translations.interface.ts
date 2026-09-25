@@ -41,6 +41,12 @@ export interface Translations {
       nova: string;
     };
     jobs: {
+      independent: {
+        company: string;
+        timePeriod: string;
+        title: string;
+        descriptions: string[];
+      };
       procetti: {
         timePeriod: string;
         title: string;
@@ -152,6 +158,10 @@ export interface Translations {
       description: string;
     };
     optimization: {
+      title: string;
+      description: string;
+    };
+    ai: {
       title: string;
       description: string;
     };

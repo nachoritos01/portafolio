@@ -8,8 +8,8 @@ export class PersonalInfoService {
   private personalInfo = signal<PersonalInfo>({
     name: 'Ignacio Navarrete Dzul',
     shortName: 'Ignacio',
-    title: 'Desarrollador Sr. Frontend | Especialista en Angular',
-    fullTitle: 'Desarrollador Frontend Senior con más de 8 años de experiencia, especializado en Angular y TypeScript',
+    title: 'Desarrollador Sr. Full Stack | Especialista en Angular',
+    fullTitle: 'Desarrollador Senior Full Stack con más de 10 años de experiencia, especialista en Angular',
     email: 'ignacio_navarrete_dzul@outlook.com',
     phone: '(999) 902 3895',
     location: 'Mérida, Yucatán, México',
@@ -23,7 +23,7 @@ export class PersonalInfoService {
     },
     workMode: 'Remoto | Híbrido',
     availability: 'Disponible inmediatamente',
-    experience: '8+ años'
+    experience: '10+ años'
   });
 
   // Computed signals for easy access

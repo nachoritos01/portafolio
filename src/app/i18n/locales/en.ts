@@ -16,7 +16,7 @@ export const en: Translations = {
   about: {
     greeting: 'Hello, I\'m',
     name: 'Ignacio',
-    description: 'Senior Frontend Developer with over 8 years of experience, specialized in Angular and TypeScript, creating modern and scalable interfaces for companies like Procetti and Neoris.',
+    description: 'Senior Full Stack Developer with 10+ years of experience and an Angular specialist. Those years taught me to understand the problem before writing code, to spot where a system can break and to decide what is worth building. AI helps me move faster, but I still make the calls. That is how I have taken three products of my own to production, with real customers.',
     viewProjects: 'View projects',
     letsTalk: 'Let\'s talk'
   },
@@ -40,8 +40,18 @@ export const en: Translations = {
       nova: 'Bursanet migration from AngularJS to Angular 12, modernization and stability.'
     },
     jobs: {
+      independent: {
+        company: 'Own projects · Mérida, Mexico',
+        timePeriod: 'Jan 2026 - Present',
+        title: 'Independent Full Stack Developer',
+        descriptions: [
+          'I built PrintFlow, a system several print shops now use every day to run their orders, production, payments and shipping.',
+          'I launched VectorSensei, an online store for print-ready designs with payments, memberships and protected downloads.',
+          'I work with LLMs and coding agents as part of the team, with rules and context I prepare for each project, and I make sure everything is well tested before it goes live.'
+        ]
+      },
       procetti: {
-        timePeriod: 'Aug 2024 - Present',
+        timePeriod: 'Aug 2024 - Jan 2026',
         title: 'Sr. Frontend Developer',
         descriptions: [
           'Architecture reorganization, Angular 17→19 migration, NgRx Signals/RxJS',
@@ -186,15 +196,19 @@ export const en: Translations = {
     },
     architecture: {
       title: 'Scalable Architecture',
-      description: 'Advanced patterns and Clean Architecture.'
+      description: 'Clean Architecture, performance and multi-tenant systems.'
     },
     optimization: {
       title: 'Optimization',
       description: 'Lazy loading, bundle optimization and efficient state management.'
     },
+    ai: {
+      title: 'AI with Judgment',
+      description: 'I use LLMs to move faster, but I review every change, protect my clients\' data and make the final call.'
+    },
     backend: {
       title: 'Backend Integration',
-      description: 'NestJS, Node.js and API integration.'
+      description: 'Laravel, NestJS, PostgreSQL, payments and APIs.'
     }
   },
 
@@ -203,12 +217,12 @@ export const en: Translations = {
     experience: 'Experience',
     workMode: 'Work Mode',
     locationValue: 'Mérida, Yucatán, México',
-    experienceValue: '8+ Years',
+    experienceValue: '10+ Years',
     workModeValue: 'Remote'
   },
 
   footer: {
-    description: 'Senior Frontend specialized in Angular and TypeScript. Available for remote work.',
+    description: 'Senior Full Stack Developer and Angular specialist. Real products, from idea to production.',
     links: 'Links',
     services: 'Services',
     webDev: 'Web Development',
