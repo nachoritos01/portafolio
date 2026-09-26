@@ -15,7 +15,7 @@
 
 Desarrollador Sr. Frontend especializado en Angular con más de 8 años de experiencia en el desarrollo de aplicaciones web modernas y escalables. Experto en migración de versiones de Angular, optimización de performance y arquitectura de código limpio. Demostrada capacidad para liderar procesos de refactorización complejos, implementar mejores prácticas de desarrollo y transformar proyectos legacy en soluciones tecnológicas modernas.
 
-En 2026 construí y llevé a producción, sin supervisión y de punta a punta, tres productos propios con clientes reales: un SaaS multi-tenant para imprentas (PrintFlow, que ya usan varias imprentas), una tienda de playeras personalizadas (Godinoterapia) y un e-commerce de diseños digitales en Next.js (VectorSensei). Uso LLMs y agentes de código como una herramienta más para avanzar rápido; las decisiones, las revisiones y la responsabilidad de lo que sale a producción siguen siendo mías.
+En 2026 construí y llevé a producción, sin supervisión y de punta a punta, tres productos propios: un SaaS multi-tenant para imprentas (PrintFlow, en etapa temprana con su primer adopter), una tienda de playeras personalizadas (Godinoterapia) y un e-commerce de diseños digitales en Next.js (VectorSensei). Uso LLMs y agentes de código como una herramienta más para avanzar rápido; las decisiones, las revisiones y la responsabilidad de lo que sale a producción siguen siendo mías.
 
 **Especialización técnica:** Angular 4-19, NgRx, RxJS, TypeScript, Arquitectura Frontend  
 **Desarrollo con IA:** LLMs y agentes de código (Claude Code, Codex, Kimi), con reglas, skills y contexto por proyecto  
@@ -160,7 +160,7 @@ En 2026 construí y llevé a producción, sin supervisión y de punta a punta, t
 **Tecnologías:** Laravel 12, PHP 8.4, Livewire, Filament 3, PostgreSQL, Stripe Billing, Conekta, Envia.com, Docker, Railway, GitHub Actions, LLMs
 
 **Contribuciones técnicas realizadas:**
-- Diseño, desarrollo y operación de un SaaS multi-tenant que ya usan varios negocios en su día a día: pedidos, tablero de producción, pagos, envíos, cotizaciones en PDF y portal de clientes
+- Diseño, desarrollo y operación de un SaaS multi-tenant, hoy en etapa temprana con su primer adopter y una versión freemium: pedidos, tablero de producción, pagos, envíos, cotizaciones en PDF y portal de clientes
 - Registro, onboarding, planes con prueba gratuita y suscripciones con Stripe Billing
 - Storefront headless en Next.js 16 ([godinoterapia-laravel.vercel.app](https://godinoterapia-laravel.vercel.app/)) que consume la API multi-tenant: catálogo, Studio para montar diseños sobre el producto, checkout, cuenta de cliente y sitio bilingüe
 - Motor de precios con varias estrategias y comandos de auditoría que miden la deriva entre lo configurado y lo cobrado en producción

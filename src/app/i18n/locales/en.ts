@@ -16,7 +16,7 @@ export const en: Translations = {
   about: {
     greeting: 'Hello, I\'m',
     name: 'Ignacio',
-    description: 'Senior Full Stack Developer with 10+ years of experience and an Angular specialist. Those years taught me to understand the problem before writing code, to spot where a system can break and to decide what is worth building. AI helps me move faster, but I still make the calls. That is how I have taken three products of my own to production, with real customers.',
+    description: 'Senior Full Stack Developer with 10+ years of experience and an Angular specialist. Those years taught me to understand the problem before writing code, to spot where a system can break and to decide what is worth building. AI helps me move faster, but I still make the calls. That is how I have taken three products of my own from idea to production.',
     viewProjects: 'View projects',
     letsTalk: 'Let\'s talk'
   },
@@ -45,7 +45,7 @@ export const en: Translations = {
         timePeriod: 'Jan 2026 - Present',
         title: 'Independent Full Stack Developer',
         descriptions: [
-          'I built PrintFlow, a system several print shops now use every day to run their orders, production, payments and shipping.',
+          'I built PrintFlow, a system for print shops to run orders, production, payments and shipping. It is at an early stage, with its first adopter and a freemium plan for the next ones.',
           'I launched VectorSensei, an online store for print-ready designs with payments, memberships and protected downloads.',
           'I work with LLMs and coding agents as part of the team, with rules and context I prepare for each project, and I make sure everything is well tested before it goes live.'
         ]

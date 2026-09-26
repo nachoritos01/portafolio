@@ -16,7 +16,7 @@ export const es: Translations = {
   about: {
     greeting: 'Hola, soy',
     name: 'Ignacio',
-    description: 'Desarrollador Senior Full Stack con más de 10 años de experiencia, especialista en Angular. Esos años me enseñaron a entender el problema antes de escribir código, a ver dónde puede fallar un sistema y a decidir qué vale la pena construir. La IA me ayuda a avanzar más rápido, pero las decisiones las sigo tomando yo. Así he llevado tres productos propios a producción, con clientes reales.',
+    description: 'Desarrollador Senior Full Stack con más de 10 años de experiencia, especialista en Angular. Esos años me enseñaron a entender el problema antes de escribir código, a ver dónde puede fallar un sistema y a decidir qué vale la pena construir. La IA me ayuda a avanzar más rápido, pero las decisiones las sigo tomando yo. Así he llevado tres productos propios de la idea a producción.',
     viewProjects: 'Ver proyectos',
     letsTalk: 'Hablemos'
   },
@@ -45,7 +45,7 @@ export const es: Translations = {
         timePeriod: 'Ene 2026 - Actualidad',
         title: 'Desarrollador Full Stack independiente',
         descriptions: [
-          'Creé PrintFlow, un sistema que ya usan varias imprentas en su día a día. Ahí llevan sus pedidos, la producción, los cobros y los envíos.',
+          'Creé PrintFlow, un sistema para imprentas donde se llevan pedidos, producción, cobros y envíos. Hoy está en etapa temprana, con su primer adopter y una versión freemium para los siguientes.',
           'Lancé VectorSensei, una tienda en línea de diseños listos para imprimir, con pagos, membresías y descargas protegidas.',
           'Trabajo con LLMs y agentes de código como parte del equipo, con reglas y contexto que preparo para cada proyecto, y me aseguro de que todo esté bien probado antes de publicarlo.'
         ]

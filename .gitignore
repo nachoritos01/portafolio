@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 .vercel
 token
+# Documentos privados de postulaciones (no publicar)
+docs/postulacion-camtom/

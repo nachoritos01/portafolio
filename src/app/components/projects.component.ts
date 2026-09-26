@@ -300,7 +300,7 @@ export class ProjectsComponent implements OnInit {
         id: 12,
         title: 'PrintFlow - SaaS para Imprentas',
         description:
-          'Sistema para imprentas que ya usan varios negocios en su día a día. Cada uno lleva ahí sus pedidos, su producción, sus precios, sus cobros y sus envíos, y sus clientes pueden revisar cómo va su pedido. Lo diseñé, lo construí y lo mantengo yo, apoyándome en LLMs y cuidando que cada cambio esté probado antes de salir.',
+          'Sistema para imprentas y talleres de personalización, hoy en etapa temprana con su primer adopter y una versión freemium. Cada negocio lleva ahí sus pedidos, su producción, sus precios, sus cobros y sus envíos, y sus clientes pueden revisar cómo va su pedido. Lo diseñé, lo construí y lo mantengo yo, apoyándome en LLMs y cuidando que cada cambio esté probado antes de salir.',
         image: '/projects-images/printflow.png',
         technologies: [
           'Laravel 12',
