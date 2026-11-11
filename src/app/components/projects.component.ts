@@ -73,6 +73,7 @@ export class ProjectsComponent implements OnInit {
   filters = computed(() => [
     { value: 'all', label: this.t().projects.filters.all },
     { value: 'web', label: this.t().projects.filters.web },
+    { value: 'design', label: this.t().projects.filters.design },
     { value: 'mobile', label: this.t().projects.filters.mobile },
     { value: 'data', label: this.t().projects.filters.data },
   ]);
@@ -357,6 +358,65 @@ export class ProjectsComponent implements OnInit {
         type: 'web',
         liveUrl: 'https://liat-fernanda-xv.vercel.app/',
         delay: 1300,
+      },
+      {
+        id: 15,
+        title: 'Godinoterapia Admin - Auditoría y Rediseño UX',
+        description:
+          'Revisé el panel de administración de PrintFlow como lo usa un negocio, anoté cada problema con su evidencia y diseñé en Figma la pantalla que lo resuelve. El menú quedó más corto, los pedidos muestran su estado y la acción principal a la vista, y lo que no se puede deshacer pide confirmación. También cubre onboarding, estados vacíos y de error, móvil y modo oscuro.',
+        image: '/projects-images/godinoterapia-admin-ux.png',
+        technologies: [
+          'Figma',
+          'Auditoría UX',
+          'Prototipo',
+          'Componentes',
+          'Responsive',
+          'Modo oscuro',
+        ],
+        category: 'UX/UI · Prototipo',
+        type: 'design',
+        liveUrl:
+          'https://www.figma.com/design/6rtqXmb0om0LwjDuzUJre7/Godinoterapia-Admin-%E2%80%94-Evoluci%C3%B3n-UX--prototipo-?node-id=2-2&p=f',
+        delay: 1400,
+      },
+      {
+        id: 16,
+        title: 'DoctorBot - Design System y Propuestas de Color',
+        description:
+          'Sistema de diseño para DoctorBot, un asistente que agenda citas por chat para consultorios. Armé tres paletas sobre los mismos componentes y la misma landing, cada una en claro y oscuro, y revisé el contraste de todas contra WCAG AA. Así el color se decide viendo pantallas completas y no muestras sueltas.',
+        image: '/projects-images/doctorbot-design-system.png',
+        technologies: [
+          'Figma',
+          'Design System',
+          'Variables',
+          'WCAG AA',
+          'Landing',
+          'Modo oscuro',
+        ],
+        category: 'Design System',
+        type: 'design',
+        liveUrl:
+          'https://www.figma.com/design/tZLJSed3FALQlQAMPbuulA/DoctorBot-%E2%80%94-Design-System-%C2%B7-3-propuestas-de-color?node-id=0-1&p=f',
+        delay: 1500,
+      },
+      {
+        id: 17,
+        title: 'e-Agrology - Centro de Documentación',
+        description:
+          'Diseño del gestor de documentación de e-Agrology. Cada instancia crea sus manuales, decide qué roles los ven, si son públicos o privados, y los comparte con otras instancias. Incluye la base visual, los íconos, la librería de componentes y el visor donde se leen los documentos.',
+        image: '/projects-images/eagrology-documentacion.png',
+        technologies: [
+          'Figma',
+          'UI Design',
+          'Componentes',
+          'Iconografía',
+          'Roles y permisos',
+        ],
+        category: 'UX/UI',
+        type: 'design',
+        liveUrl:
+          'https://www.figma.com/design/Z5PySRd1gJ4zTStEJp13d8/Centro-de-documentacion?node-id=306-266',
+        delay: 1600,
       },
     ]);
   }
