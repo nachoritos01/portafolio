@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ignacio Navarrete Dzul - CV Diseñador UX/UI con perfil Frontend</title>
+<style>
+  @page { size: Letter; margin: 14mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1c2230; font-size: 9.6pt; line-height: 1.42; margin: 0; }
+  a { color: #0b5cd6; text-decoration: none; }
+  header { border-bottom: 2px solid #0b5cd6; padding-bottom: 8px; margin-bottom: 10px; }
+  h1 { font-size: 21pt; margin: 0; letter-spacing: -0.3px; }
+  .role { font-size: 12pt; font-weight: 600; color: #0b5cd6; margin: 2px 0 4px; }
+  .meta { color: #4a5263; font-size: 9pt; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px; color: #0b5cd6; margin: 13px 0 5px; border-bottom: 1px solid #d6dbe6; padding-bottom: 2px; }
+  h3 { font-size: 10pt; margin: 8px 0 1px; }
+  .sub { color: #4a5263; font-size: 9pt; margin-bottom: 3px; }
+  ul { margin: 2px 0 4px; padding-left: 16px; }
+  li { margin: 1.5px 0; }
+  p { margin: 3px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; }
+  .grid p { margin: 1.5px 0; }
+  .tag { font-weight: 600; }
+  .proj { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .highlight { background: #eef4ff; border-left: 3px solid #0b5cd6; padding: 6px 9px; margin: 6px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>José Ignacio Navarrete Dzul</h1>
+  <div class="role">Diseñador UX/UI · Frontend (Angular y React)</div>
+  <div class="meta">
+    Figma · Design Systems · Prototipos · Diseño responsive · HTML5 · CSS3/SASS · JavaScript ES6+ · APIs REST<br>
+    <a href="mailto:ignacio_navarrete_dzul@outlook.com">ignacio_navarrete_dzul@outlook.com</a> ·
+    <a href="https://portafolio-green-tau-46.vercel.app/">Portafolio</a> ·
+    <a href="https://github.com/nachoritos01">GitHub</a> ·
+    Mérida, Yucatán, México · Disponible para trabajo remoto · +10 años de experiencia
+  </div>
+</header>
+
+<h2>Sobre mí</h2>
+<p>Vengo del diseño: estudié Artes Gráficas y después Multimedia, y desde ahí llegué al desarrollo web. Llevo más de 10 años construyendo interfaces, la mayor parte en Angular y en los últimos proyectos también en React. Esa mezcla es lo que más uso hoy: diseño en Figma pensando en cómo se va a construir, y cuando paso al código sé qué datos llegan de la API, qué pasa mientras cargan y qué ve la persona si algo falla.</p>
+<p>Antes de dibujar una pantalla reviso cómo se usa el sistema y dónde se atora la gente. Cada decisión la puedo explicar con lo que observé, tanto a un equipo de desarrollo como a quien lleva el negocio.</p>
+
+<div class="highlight"><b>Portafolio de diseño:</b>
+<a href="https://www.figma.com/design/6rtqXmb0om0LwjDuzUJre7/Godinoterapia-Admin-%E2%80%94-Evoluci%C3%B3n-UX--prototipo-?node-id=2-2&amp;p=f">Godinoterapia Admin (auditoría y prototipo)</a> ·
+<a href="https://www.figma.com/design/tZLJSed3FALQlQAMPbuulA/DoctorBot-%E2%80%94-Design-System-%C2%B7-3-propuestas-de-color?node-id=0-1&amp;p=f">DoctorBot (design system)</a> ·
+<a href="https://www.figma.com/design/Z5PySRd1gJ4zTStEJp13d8/Centro-de-documentacion?node-id=306-266">e-Agrology (centro de documentación)</a> ·
+<a href="https://portafolio-green-tau-46.vercel.app/">proyectos web interactivos</a></div>
+
+<h2>Proyectos de diseño UX/UI</h2>
+<div class="proj"><h3>Godinoterapia Admin — Auditoría de usabilidad y rediseño del panel</h3>
+<ul>
+  <li>Recorrí el panel de administración de PrintFlow con varias cuentas de prueba (una tienda con el onboarding sin terminar, otra con catálogo importado y el panel del dueño) y anoté cada problema con su evidencia: qué confunde, qué pone en riesgo los datos y qué pesa de más.</li>
+  <li>Diseñé la pantalla que resuelve cada hallazgo y dejé una tabla que liga problema, evidencia y solución. El menú quedó más corto, los pedidos muestran su estado y la acción principal a la vista, y lo que no se puede deshacer pide confirmación.</li>
+  <li>Definí flujos completos: registro e inicio de sesión, onboarding, asistente para crear productos, pedidos y producción. Cada uno con sus estados vacío, de carga, de error y de límite de plan, en escritorio, móvil y modo oscuro.</li>
+  <li>Armé la librería del panel en Figma: componentes con variantes (botones, etiquetas, filtros, pasos del asistente, diálogos normal y destructivo) y variables de marca con modo claro y oscuro, documentados para pasarlos a código.</li>
+</ul></div>
+<div class="proj"><h3>DoctorBot — Design system con tres propuestas de color</h3>
+<ul>
+  <li>Armé la base del sistema (tipografía, espaciado, radios, sombras) y los componentes base (botón, badge, campo, tarjeta), y apliqué tres paletas sobre la misma landing y el mismo backoffice para decidir el color viendo pantallas completas.</li>
+  <li>Usé variables de Figma con un modo por propuesta, en claro y en oscuro, con los mismos nombres que las variables CSS del código. Cambiar de propuesta en el diseño es lo mismo que cambiarla en la app.</li>
+  <li>Medí el contraste de cada combinación contra WCAG AA y cerré con una recomendación escrita de cuál conviene según el tipo de clínica.</li>
+</ul></div>
+<div class="proj"><h3>e-Agrology — Centro de documentación</h3>
+<ul>
+  <li>Diseñé el gestor donde cada instancia crea sus manuales, decide qué roles los ven, si son públicos o privados, y los comparte con otras instancias, además del visor donde se leen.</li>
+  <li>Construí la base visual, la librería de íconos y los componentes del módulo, y llevé el visor hasta una versión aprobada.</li>
+</ul></div>
+
+<h2>Experiencia</h2>
+
+<div class="proj"><h3>Diseñador y desarrollador independiente — Productos propios</h3>
+<div class="sub">PrintFlow · Godinoterapia · VectorSensei | Enero 2026 – Actualidad | Mérida, México</div>
+<ul>
+  <li>Diseño y construyo <b>PrintFlow</b>, un sistema para imprentas en etapa temprana: lo usa mi negocio y su primer adopter. Lo que propongo en Figma lo implemento yo, así que cuido que el diseño se pueda construir tal cual.</li>
+  <li>Hice en React y Next.js la <b>tienda en línea de Godinoterapia</b>, donde el cliente sube su diseño, lo acomoda sobre la prenda, cotiza y paga. Está en español e inglés y tiene modo oscuro.</li>
+  <li>Lancé <b>VectorSensei</b>, una tienda de diseños digitales con pagos, membresías y descargas protegidas.</li>
+  <li>Uso herramientas de IA para avanzar más rápido; las decisiones de diseño y la revisión de cada cambio siguen siendo mías.</li>
+</ul></div>
+
+<h3>Desarrollador Sr. Frontend — Procetti</h3>
+<div class="sub">Agosto 2024 – Enero 2026 | Remoto, México</div>
+<ul>
+  <li>Reorganicé el proyecto en componentes reutilizables, separando los de presentación de los de lógica para que fueran más fáciles de mantener.</li>
+  <li>Ordené el consumo de APIs REST con interceptores que manejan en un solo lugar las peticiones y los errores.</li>
+  <li>Mejoré cómo se muestran los datos en tiempo real con Signals, NgRx y RxJS, y aligeré las cargas con navegación diferida.</li>
+  <li>Migré la aplicación de Angular 17 a 18 y luego a 19, con componentes standalone.</li>
+</ul>
+
+<h3>Desarrollador Sr. Frontend — Neoris</h3>
+<div class="sub">Abril 2022 – Marzo 2024 | México · Clientes: Telcel (SIGADE), Cemex</div>
+<ul>
+  <li>Construí interfaces responsivas para sistemas empresariales con Angular Material y Tailwind CSS, como SIGADE, el sistema de garantías de Telcel, donde cada tipo de usuario ve solo lo que le toca.</li>
+  <li>Implementé el manejo de estado con NgRx y RxJS en aplicaciones grandes, cuidando el rendimiento.</li>
+</ul>
+
+<h3>Experiencia previa</h3>
+<div class="sub">2016 – 2022</div>
+<ul>
+  <li><b>Nova Solutions Systems</b> — Sr. Frontend: migración de Bursanet de AngularJS a Angular.</li>
+  <li><b>Relappro</b> — Full Stack: aplicaciones web con Angular y Node.js.</li>
+  <li><b>Simetrical</b> — Backend: APIs con Symfony. · <b>Efisense Interactive</b> — Web: PHP, CodeIgniter y MySQL.</li>
+</ul>
+
+<h2>Habilidades</h2>
+<div class="grid">
+  <p><span class="tag">Figma:</span> Auto Layout, componentes con variantes, variables con modos (claro/oscuro, marcas), librerías y design systems.</p>
+  <p><span class="tag">UX:</span> auditoría de usabilidad, flujos de navegación, arquitectura de información, wireframes, prototipos interactivos.</p>
+  <p><span class="tag">UI:</span> diseño responsive (móvil y escritorio), lineamientos visuales, iconografía, estados vacío, carga y error.</p>
+  <p><span class="tag">Accesibilidad:</span> contraste WCAG AA, jerarquía visual, textos claros y acciones delicadas con confirmación.</p>
+  <p><span class="tag">Frontend:</span> HTML5, CSS3, SASS/SCSS, Tailwind CSS, JavaScript ES6+, TypeScript.</p>
+  <p><span class="tag">Frameworks:</span> Angular (especialidad), React, Next.js, Angular Material, shadcn/ui.</p>
+  <p><span class="tag">Datos y APIs:</span> APIs REST, JSON, interceptores HTTP, manejo de estado con Signals, NgRx, RxJS y Zustand.</p>
+  <p><span class="tag">Herramientas:</span> Git, GitHub, Vercel, Docker, Conventional Commits.</p>
+</div>
+
+<h2>Educación</h2>
+<p><b>Universidad Tecnológica Metropolitana</b></p>
+<ul>
+  <li>Técnico Superior Universitario en Multimedia y Comercio Electrónico (2011–2013). Cédula No. 09179779.</li>
+  <li>Técnico Superior Universitario en Artes Gráficas (2008–2010). Cédula No. 6997154.</li>
+</ul>
+<p><span class="tag">Cursos:</span> Advanced Angular · NgRx in Angular · ReactiveX – RxJS · Docker: From Beginner to Expert.</p>
+</body>
+</html>

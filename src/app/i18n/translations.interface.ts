@@ -94,6 +94,7 @@ export interface Translations {
     filters: {
       all: string;
       web: string;
+      design: string;
       mobile: string;
       data: string;
     };

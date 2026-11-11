@@ -114,6 +114,7 @@ export const en: Translations = {
     filters: {
       all: 'All',
       web: 'Web Apps',
+      design: 'UX/UI',
       mobile: 'Mobile',
       data: 'Data'
     },
