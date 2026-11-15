@@ -55,7 +55,7 @@ En 2026 construí y llevé a producción, sin supervisión y de punta a punta, t
 ## Experiencia Profesional
 
 ### Desarrollador Sr. Frontend
-**Procetti** | Agosto 2024 - Actualidad | Remoto, México
+**Proceti** | Agosto 2024 - Actualidad | Remoto, México
 
 **Responsabilidades principales:**
 - Liderazgo en reorganización completa de arquitectura de proyecto con estructura modular optimizada

@@ -47,7 +47,7 @@
 
 ### 📱 **Secciones Implementadas**
 - **About** - Información personal con datos reales
-- **Resume** - Experiencia laboral real (Procetti, Neoris, Nova Solutions)
+- **Resume** - Experiencia laboral real (Proceti, Neoris, Nova Solutions)
 - **Projects** - Proyectos reales con filtros dinámicos
 - **Blog** - Artículos categorizados
 - **Contact** - Formulario reactivo con EmailJS integrado
@@ -63,7 +63,7 @@
 - **CV Descargable:** PDF integrado con datos reales
 
 ### **Experiencia Laboral Actualizada**
-1. **Procetti** (Ago 2024 - Actualidad) - Desarrollador Sr. Frontend
+1. **Proceti** (Ago 2024 - Actualidad) - Desarrollador Sr. Frontend
    - Migración Angular 17→19, NgRx Signals, optimización bundles
 2. **Neoris** (Abr 2022 - Mar 2024) - Desarrollador Sr. Frontend  
    - Angular Material, Tailwind CSS, NgRx, patrones reactivos

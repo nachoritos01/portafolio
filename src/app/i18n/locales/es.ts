@@ -30,7 +30,7 @@ export const es: Translations = {
       seniorFrontend: 'Desarrollador Sr. Frontend'
     },
     companies: {
-      procetti: 'Procetti | Remoto, México',
+      procetti: 'Proceti | Remoto, México',
       neoris: 'Neoris | México',
       nova: 'Nova Solutions Systems | México'
     },
