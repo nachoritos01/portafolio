@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>José Ignacio Navarrete Dzul - CV Angular Developer - GFT México</title>
+<style>
+  @page { size: Letter; margin: 14mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1c2230; font-size: 9.6pt; line-height: 1.42; margin: 0; }
+  a { color: #0b5cd6; text-decoration: none; }
+  header { border-bottom: 2px solid #0b5cd6; padding-bottom: 8px; margin-bottom: 10px; }
+  h1 { font-size: 21pt; margin: 0; letter-spacing: -0.3px; }
+  .role { font-size: 12pt; font-weight: 600; color: #0b5cd6; margin: 2px 0 4px; }
+  .meta { color: #4a5263; font-size: 9pt; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px; color: #0b5cd6; margin: 13px 0 5px; border-bottom: 1px solid #d6dbe6; padding-bottom: 2px; }
+  h3 { font-size: 10pt; margin: 8px 0 1px; }
+  .sub { color: #4a5263; font-size: 9pt; margin-bottom: 3px; }
+  ul { margin: 2px 0 4px; padding-left: 16px; }
+  li { margin: 1.5px 0; }
+  p { margin: 3px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; }
+  .grid p { margin: 1.5px 0; }
+  .tag { font-weight: 600; }
+  .proj { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+</style>
+</head>
+<body>
+<header>
+  <h1>José Ignacio Navarrete Dzul</h1>
+  <div class="role">Angular Developer · Aplicaciones web empresariales</div>
+  <div class="meta">
+    Angular · Angular CLI · TypeScript · RxJS · Angular Material · Bootstrap · SCSS · NgRx · Docker · JWT · Nx<br>
+    <a href="mailto:ignacio_navarrete_dzul@outlook.com">ignacio_navarrete_dzul@outlook.com</a> ·
+    <a href="https://github.com/nachoritos01">GitHub</a> ·
+    <a href="https://portafolio-green-tau-46.vercel.app/">Portafolio</a> ·
+    Mérida, Yucatán, México · Remoto · +10 años de experiencia
+  </div>
+</header>
+
+<h2>Sobre mí</h2>
+<p>Llevo más de 10 años construyendo aplicaciones web y casi todo ese tiempo con Angular. Buena parte de mi carrera ha sido modernizar: migré un sistema financiero de AngularJS a Angular y he llevado aplicaciones empresariales por varias versiones hasta componentes standalone y Signals, sin detener la operación del cliente.</p>
+<p>Me gusta que un proyecto Angular esté bien ordenado: módulos y rutas por área de negocio, servicios con la lógica fuera de los componentes, modelos claros, estilos encapsulados por componente y configuraciones separadas por entorno. He trabajado como consultor dentro de equipos de clientes grandes, en apps que se construyen y despliegan por separado y que comparten librerías de componentes.</p>
+
+<h2>Experiencia</h2>
+
+<h3>Desarrollador Sr. Frontend — Proceti (consultoría)</h3>
+<div class="sub">Agosto 2024 – Enero 2026 | Remoto, México · Cliente: Tecnológico de Monterrey</div>
+<ul>
+  <li><b>Tec Sandbox</b> — Portal en Angular donde se gestionan iniciativas, invitados, órdenes de compra y consumo de nube, conectado a varios servicios de backend. Lideré su reorganización por áreas de negocio, con componentes reutilizables que separan la presentación de la lógica.</li>
+  <li>Migré la aplicación de Angular 17 a 18 y luego a 19, con componentes standalone, carga diferida, mejoras de seguridad y paquetes más ligeros.</li>
+  <li>Manejé el estado con NgRx Store y NgRx Signals. Guardo en el store el rol y el equipo del usuario que vienen en el token JWT, para que el menú y los permisos cambien según cada perfil.</li>
+  <li>Ordené la sesión con SSO y la comunicación con las APIs con interceptores que resuelven en un solo lugar autenticación, errores y peticiones duplicadas, más guards y resolvers en la navegación.</li>
+  <li>Empaqueté el frontend en Docker con nginx para su despliegue.</li>
+  <li><b>Credenciales digitales</b> — En la app de administración (Angular 20) construí la emisión masiva: el usuario sube un Excel, la app valida correos y números de nómina, detecta duplicados y muestra un resumen antes de enviar. Separé esa lógica en servicios propios y la pantalla en componentes hijos.</li>
+  <li>La plataforma de credenciales funciona como varias apps independientes (administración, verificador y una wallet integrada como microfrontend con Module Federation), cada una con su propio despliegue, configuraciones por entorno y la librería de componentes del Tec.</li>
+</ul>
+
+<h3>Desarrollador Sr. Frontend — Neoris (consultoría)</h3>
+<div class="sub">Abril 2022 – Marzo 2024 | México · Clientes: Cemex, Telcel</div>
+<ul>
+  <li><b>Cemex</b> — Desarrollé funcionalidades de su plataforma de comercio electrónico para Reino Unido y República Checa, con NgRx completo (store, actions, reducers, effects y selectors) y RxJS para manejar configuraciones y flujos de datos complejos.</li>
+  <li><b>Telcel (SIGADE)</b> — Construí módulos del sistema de garantías con Angular y Angular Material: cada tipo de usuario ve solo lo que le toca, con tablas, filtros y paginación.</li>
+  <li>Trabajé en Scrum dentro de los equipos del cliente, revisando historias de usuario con ellos y entregando por sprint.</li>
+</ul>
+
+<h3>Desarrollador Sr. Frontend — Nova Solutions Systems</h3>
+<div class="sub">Noviembre 2021 – Abril 2022 | México · Cliente: Actinver</div>
+<ul>
+  <li>Participé en la modernización de <b>Bursanet</b>, la plataforma de inversión en línea de Actinver, de AngularJS a Angular 12, preservando funciones críticas para los usuarios y validando cada parte antes de liberarla.</li>
+</ul>
+
+<h3>Desarrollador Full Stack independiente — Proyectos propios</h3>
+<div class="sub">Godinoterapia · Habla · PrintFlow | Enero 2026 – Actualidad | Mérida, México</div>
+<ul>
+  <li>Monté <b>Godinoterapia</b> como un monorepo Nx con Angular, NestJS y una librería compartida entre el frontend y la API, para que ambos lados usen los mismos modelos.</li>
+  <li>Construyo <b>Habla</b> en Angular 21 con Signals y RxJS. Dejé el servicio de voz detrás de un contrato propio, para desarrollar y probar la interfaz sin depender todavía del backend.</li>
+  <li>Despliego <b>PrintFlow</b>, un sistema para imprentas en etapa temprana, con Docker e integración continua en cada cambio.</li>
+  <li>Uso LLMs y agentes de código para avanzar más rápido; reviso y entiendo cada cambio antes de aceptarlo, y nada llega a producción sin pruebas.</li>
+</ul>
+
+<div class="proj"><h3>Experiencia previa</h3>
+<div class="sub">Hasta 2021</div>
+<ul>
+  <li><b>Relappro</b> — Full Stack: panel de gestión publicitaria en Angular con backend en Node.js.</li>
+  <li><b>Simetrical</b> — Full Stack: APIs REST con Symfony e integración con el frontend. · <b>Efisense Interactive</b> — Web: PHP, CodeIgniter y MySQL.</li>
+</ul></div>
+
+<h2>Habilidades</h2>
+<div class="grid">
+  <p><span class="tag">Angular:</span> de AngularJS a Angular 21, Angular CLI, módulos y standalone, servicios, modelos, routing con carga diferida, guards y resolvers.</p>
+  <p><span class="tag">Lenguajes:</span> TypeScript, JavaScript ES6+, RxJS, HTML5.</p>
+  <p><span class="tag">Estilos:</span> SCSS encapsulado por componente, Angular Material, Bootstrap, Tailwind CSS.</p>
+  <p><span class="tag">Estado:</span> NgRx Store (actions, reducers, effects, selectors) y NgRx Signals.</p>
+  <p><span class="tag">Build y despliegue:</span> configuraciones por entorno con Angular CLI, Docker, nginx, GitHub Actions.</p>
+  <p><span class="tag">Seguridad:</span> SSO, JWT, interceptores HTTP, permisos por rol.</p>
+  <p><span class="tag">Arquitectura:</span> monorepos con Nx, librerías compartidas, design systems como librería, división por áreas de negocio.</p>
+  <p><span class="tag">Pruebas:</span> Jasmine, Karma, Vitest, Jest; pruebas unitarias de componentes y servicios.</p>
+  <p><span class="tag">Backend:</span> Node.js, NestJS, Laravel, Symfony; Java y Spring Boot a nivel de práctica.</p>
+  <p><span class="tag">Equipo:</span> Git, GitHub, Git Flow, Conventional Commits, code review, Scrum, Jira.</p>
+</div>
+
+<h2>Educación y cursos</h2>
+<p><b>Universidad Tecnológica Metropolitana</b> — TSU en Multimedia y Comercio Electrónico (2011–2013), cédula 09179779 · TSU en Artes Gráficas (2008–2010), cédula 6997154.</p>
+<p><span class="tag">Cursos:</span> Advanced Angular · NgRx in Angular · ReactiveX – RxJS · Docker: From Beginner to Expert.</p>
+</body>
+</html>
